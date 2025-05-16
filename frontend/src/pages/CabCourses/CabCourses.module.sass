@@ -1,0 +1,661 @@
+.cab_courses
+  &__blocks
+    display: flex
+    align-items: flex-start
+    flex-direction: initial
+    gap: 11px
+
+  &__aside_title
+    font-weight: 600
+    font-size: 14px
+    line-height: 17px
+    color: #7D8592
+    margin: 0
+
+  &__aside
+    width: 100%
+    max-width: 270px
+    padding: 0
+    height: 814px
+
+  &__aside_title_wrapper
+    border-bottom: 1px solid #E4E6E8
+    padding: 24px
+
+  &__aside_content
+    padding: 10px
+    display: flex
+    flex-direction: column
+    gap: 20px
+
+  &__aside_content_block
+    display: flex
+    flex-direction: column
+    gap: 4px
+    font-weight: 400
+    font-size: 12px
+    color: #7D8592
+    padding: 13px
+    border-radius: 14px
+
+    &_active
+      background-color: #CBD5F8
+
+    span
+      font-weight: 600
+      font-size: 14px
+      color: #2D2323
+
+  &__text
+    font-weight: 400
+    font-size: 16px
+    line-height: 24px
+    color: #7D8592
+    margin-bottom: 5px
+
+  &__title
+    font-weight: 600
+    font-size: 24px
+    line-height: 24px
+    color: #2D2323
+    margin: 0
+    margin-bottom: 17px
+
+  &__tabs_btns
+    margin-bottom: 36px
+
+    &_adaptive
+      display: none
+
+  &__content_title
+    font-weight: 700
+    font-size: 24px
+    line-height: 30px
+    color: #2D2323
+    margin: 0
+    margin-bottom: 36px
+
+  &__content_inf
+    padding: 25.1205px 36.8958px
+    background-color: #EEE9DF
+    border: 0.785016px solid #FB998A
+    border-radius: 7.85016px
+    font-weight: 700
+    font-size: 14px
+    line-height: 120%
+    text-align: center
+    color: #000000
+    margin-bottom: 36px
+
+  &__input_column
+    grid-column: span 2
+
+  &__block_text_inputs
+    margin-bottom: 35px
+
+  &__btns
+    display: flex
+    align-items: center
+    justify-content: space-between
+    gap: 15px
+
+    &_justify_end
+      justify-content: flex-end
+
+      button
+        max-width: 224px
+
+  &__main_btn
+    font-weight: 600
+    font-size: 16px
+    color: #FBF9F5
+    padding: 13px
+    width: 100%
+    border-radius: 75px
+    background-color: #4F75FE
+    margin-bottom: 18px
+
+    &_red
+      background-color: #FB998A
+
+  &__main_block
+    flex-grow: 1
+
+  &__file
+    margin-bottom: 17px
+
+  &__file_text
+    font-weight: 600
+    font-size: 14px
+    line-height: 17px
+    color: #2D2323
+    margin-bottom: 17px
+
+  &__payment
+    display: grid
+    grid-template-columns: repeat(2,1fr)
+    gap: 10px
+    margin-bottom: 35px
+
+  &__payment_content
+    display: flex
+    flex-direction: column
+
+  &__payment_title
+    font-weight: 700
+    font-size: 24px
+    color: #2D2323
+    margin: 0
+    margin-bottom: 35px
+
+  &__payment_inf
+    padding: 25.1205px 20px
+    background: #EEE9DF
+    border: 0.785016px solid #FB998A
+    border-radius: 7.85016px
+    margin-bottom: 39px
+
+  &__payment_inf_list
+    padding: 0
+    padding-left: 25px
+    display: flex
+    flex-direction: column
+    gap: 5px
+    margin: 0
+
+  &__payment_inf_item
+    font-weight: 400
+    font-size: 14px
+    line-height: 120%
+    color: #2D2323
+
+    span
+      text-decoration: underline
+      cursor: pointer
+
+  &__additions
+    display: flex
+    flex-direction: column
+    gap: 7px
+
+  &__additions_block
+    padding: 15px 20px
+    background-color: #CDC4FB
+    border: 0.785016px solid #2D2323
+    border-radius: 7.85016px
+    display: flex
+    align-items: center
+    justify-content: space-between
+    gap: 15px
+
+  &__additions_block_text
+    display: flex
+    flex-direction: column
+    gap: 5px
+    font-weight: 600
+    font-size: 14px
+    color: #000000
+
+    span
+      display: flex
+      align-items: center
+      gap: 5px
+      font-weight: 300
+      font-size: 10px
+      text-decoration-line: underline
+      color: #FBF9F5
+      cursor: pointer
+
+  &__price
+    border-top: 1px solid #7D8592
+    border-bottom: 1px solid #7D8592
+    padding: 20px 0
+    margin-bottom: 35px
+    display: flex
+    flex-direction: column
+    gap: 14px
+
+  &__price_text
+    font-weight: 600
+    font-size: 14px
+    color: #7D8592
+    display: grid
+    grid-template-columns: repeat(2,1fr)
+    gap: 10px
+
+    span
+      color: #2D2323
+
+    &_bold,
+    &_bold span
+      font-weight: 800
+      font-size: 20px
+      color: #2D2323
+
+    &_red,
+    &_red span
+      color: #FB998A
+
+    &_blue,
+    &_blue span
+      color: #4F75FE
+
+  &__line_through
+    text-decoration: line-through
+
+  &__underline
+    text-decoration: underline
+
+  &__inf_block
+    padding: 25.1205px 36.8958px
+    background-color: #EEE9DF
+    border: 0.785016px solid #FB998A
+    border-radius: 7.85016px
+
+    &_descr
+      margin-bottom: 20px
+
+    &_list
+      margin-bottom: 35px
+
+      ul
+        font-weight: 400
+        font-size: 14px
+        color: #2D2323
+        padding-left: 21px
+        margin: 0
+        margin-bottom: 24px
+
+    &_progress
+      display: flex
+      align-items: center
+      justify-content: space-between
+      gap: 15px
+
+    &_thanks
+      padding: 17px 37px
+
+  &__inf_block_text
+    font-weight: 600
+    font-size: 14px
+    color: #2D2323
+
+    &_list
+      margin-bottom: 8px
+
+  &__inf_block_text_center
+    text-align: center
+
+  &__inf_text
+    font-weight: 400
+    font-size: 14px
+    color: #2D2323
+
+  &__details
+    display: flex
+    flex-direction: column
+    gap: 30px
+    margin-bottom: 30px
+
+  &__details_item
+    display: grid
+    grid-template-columns: repeat(2,1fr)
+    gap: 15px
+    font-weight: 600
+    font-size: 14px
+    color: #7D8592
+
+    span
+      color: #2D2323
+
+  &__progress_wrapper
+    display: flex
+    flex-direction: column
+    gap: 12px
+    margin-bottom: 35px
+
+  &__diploma_img_wrapper
+    position: relative
+
+  &__diploma_img_download
+    position: absolute
+    right: 16px
+    top: 16px
+    width: 32px
+    height: 32px
+    background: #EEE9DF
+    border: 1px solid #7D8592
+    box-shadow: 0px 0px 2px rgba(155, 32, 47, 0.1)
+    border-radius: 4px
+    background-size: 14px
+    background-position: center
+    background-repeat: no-repeat
+    background-image: url("../../assets/cab-courses/cab-courses-arrow.svg")
+
+  &__pointer
+    cursor: pointer
+
+  &__thanks_text
+    font-weight: 400
+    font-size: 18px
+    line-height: 22px
+    color: #2D2323
+    margin-bottom: 30px
+    display: flex
+    flex-direction: column
+    gap: 3px
+
+  &__thanks_btn
+    padding: 23px 15px
+    background-color: #5FE0BE
+    border-radius: 75.2133px
+    font-weight: 600
+    font-size: 16px
+    color: #2D2323
+    width: 100%
+
+  &__certificate
+    padding: 25.1205px 20px
+
+    width: 100%
+    max-width: 500px
+    background: #EEE9DF
+    border: 0.785016px solid #FB998A
+    border-radius: 7.85016px
+    display: flex
+    align-items: center
+    gap: 11px
+
+    svg
+      flex-shrink: 0
+
+    button
+      font-weight: 400
+      font-size: 14px
+      text-decoration-line: underline
+      color: #2D2323
+
+  &__doc_variation_wrapper
+    position: relative
+    width: 454px
+    margin: 0 auto
+
+    img
+      width: 100%
+
+    div
+      pointer-events: none
+
+  &__doc_variation_text
+    color: #000
+    font-size: 9px
+    position: absolute
+    width: 100%
+    max-width: 100px
+    text-align: center
+
+    &_code
+      left: 76px
+      bottom: 95px
+
+    &_city
+      left: 76px
+      bottom: 67px
+
+    &_date
+      left: 76px
+      bottom: 40px
+
+    &_code_1
+      left: 76px
+      bottom: 94px
+
+    &_city_1
+      left: 76px
+      bottom: 75px
+
+    &_date_1
+      left: 76px
+      bottom: 52px
+
+  &__doc_variation_main_text
+    width: 100%
+    max-width: 150px
+    position: absolute
+    right: 46px
+    top: 50px
+    color: #000
+    font-size: 8px
+    text-align: center
+
+  &__doc_variation_authors
+    width: 100%
+    max-width: 70px
+    position: absolute
+    right: 26px
+    bottom: 42px
+    color: #000
+    font-size: 7px
+    display: flex
+    flex-direction: column
+    gap: 3px
+
+    &_1
+      bottom: 45px
+      gap: 4px
+
+  &__doc_variation_download_wrapper
+    position: relative
+
+  &__inf_block_download_btns
+    display: flex
+    align-items: center
+    gap: 5px
+
+  &__app_text
+    position: absolute
+    color: #000
+    font-size: 7px
+    width: 100%
+    max-width: 200px
+
+    &_fio
+      left: 25px
+      top: 72px
+    &_education
+      left: 25px
+      top: 111px
+    &_date
+      left: 28px
+      top: 133px
+      font-size: 6px
+      display: flex
+      align-items: center
+      gap: 19px
+    &_place
+      left: 25px
+      top: 158px
+    &_theme
+      left: 25px
+      top: 197px
+    &_prob
+      left: 25px
+      top: 220px
+    &_theme_2
+      left: 25px
+      top: 245px
+
+  &__app_modules
+    position: absolute
+    color: #000
+    font-size: 6px
+    right: 14px
+    top: 50px
+    display: flex
+    flex-direction: column
+    gap: 5px
+
+  &__app_modules_total
+    position: absolute
+    right: 150px
+    bottom: 56px
+    color: #000
+    font-size: 5px
+
+  &__app_modules_authors
+    position: absolute
+    right: 44px
+    bottom: 34px
+    color: #000
+    font-size: 5px
+    display: flex
+    flex-direction: column
+    gap: 4px
+
+  &__app_module
+    display: grid
+    grid-template-columns: 20px 117px 38px 27px
+
+    &_order
+      text-align: center
+      margin-right: 3px
+
+    &_hours
+      font-size: 5px
+      text-align: center
+
+    &_mark
+      font-size: 5px
+      text-align: center
+
+.certificate
+  width: 800px
+  background-color: #fff
+  padding: 30px
+  padding-bottom: 133px
+
+  &__promo
+    width: 400px
+    display: flex
+    align-items: center
+    flex-direction: column
+    text-align: center
+    gap: 5px
+    font-size: 15px
+    margin-bottom: 50px
+
+  &__promo_bold
+    font-weight: 700
+
+  &__promo_underline
+    text-decoration: underline
+
+  &__promo_separator
+    width: 100%
+    height: 2px
+    background-color: #000
+
+  &__content_title
+    font-size: 18px
+    margin-bottom: 30px
+    text-align: center
+
+  &__content_text_indent
+    text-indent: 20px
+    margin-bottom: 80px
+
+  &__content_author
+    display: flex
+    align-items: center
+    justify-content: space-between
+    position: relative
+
+    img
+      position: absolute
+      right: 80px
+      top: -30px
+
+    span:first-of-type
+      width: 100%
+      max-width: 540px
+
+@media (max-width: 1199.98px)
+  .cab_courses
+    &__blocks
+      flex-direction: column
+
+    &__aside
+      height: 327px
+      max-width: initial
+      overflow-y: auto
+
+    &__payment
+      grid-template-columns: 1fr
+
+@media (max-width: 991.98px)
+  .cab_courses
+    &__details_item
+      grid-template-columns: 1fr
+
+@media (max-width: 575.98px)
+  .cab_courses
+    &__tabs_btns
+      display: none
+
+    &__tabs_btns_adaptive
+      display: block
+
+    &__main_block
+      width: 100%
+
+    &__btns
+      flex-direction: column
+
+      &_adaptive
+        button
+          margin: 0
+
+    &__content_inf
+      padding: 15px
+
+    &__doc_variation_wrapper
+      width: 340px
+
+    &__inf_block
+      padding: 20px 15px
+      font-size: 14px
+
+    &__doc_variation_text_code
+      left: 44px
+      bottom: 70px
+      font-size: 7px
+
+    &__doc_variation_text_city
+      left: 45px
+      bottom: 56px
+      font-size: 7px
+
+    &__doc_variation_text_city_2
+      bottom: 52px
+
+    &__doc_variation_text_date
+      left: 46px
+      bottom: 38px
+      font-size: 7px
+
+    &__doc_variation_text_date_2
+      bottom: 30px
+
+    &__doc_variation_main_text
+      right: 20px
+      top: 42px
+      font-size: 6px
+
+    &__doc_variation_authors
+      right: 25px
+      bottom: 32px
+      font-size: 6px
+
+    &__doc_variation_authors_2
+      right: 5px
+      bottom: 30px

@@ -1,0 +1,220 @@
+.course_details
+  padding-top: 0
+  &__hero_outer
+    margin-bottom: 75px
+  &__hero
+    margin-bottom: 120px
+
+  &__hero_btn
+    padding: 0px 50px
+    background-color: #FFFFFF
+    border-radius: 10px
+    padding: 20px 50px
+    font-weight: 600
+    font-size: 24px
+    color: #000000
+    display: block
+    width: 100%
+    max-width: 500px
+
+  &__price_wrapper
+    flex-direction: column-reverse
+    align-items: flex-start
+
+  &__date
+    font-size: 20px
+    font-weight: 400
+
+  &__descr
+    color: #2D2323
+
+  &__title
+    margin-bottom: 92px
+
+  &__hours
+    display: grid
+    grid-template-columns: repeat(7, 1fr)
+    margin-bottom: 31px
+    gap: 10px
+
+  &__hours_btn
+    padding: 25px
+    background-color: #FFFFFF
+    border: 1px solid #134283
+    border-radius: 10px
+    font-weight: 600
+    font-size: 24px
+    color: #000000
+
+    &_active
+      background-color: #134283
+      color: #fff
+
+  &__table
+    display: flex
+    flex-direction: column
+    margin-bottom: 125px
+
+    &_adaptive
+      display: none
+
+  &__table_row
+    background-color: #FBF9F5
+    display: grid
+    grid-template-columns: repeat(6, calc( 100% / 6 ))
+
+    &:not(:last-child)
+      border-bottom: 1px solid #7D8592
+
+    &_header
+      background-color: #134283
+      border-radius: 10px 10px 0 0
+
+      > div
+        font-weight: 600
+        color: #fff
+
+    &_footer
+      border-radius: 0 0 10px 10px
+      background-color: #1691D0
+
+      > div
+        font-weight: 600
+
+  &__table_column
+    padding: 27px 30px
+    font-weight: 400
+    font-size: 20px
+    line-height: 24px
+    color: #000000
+    display: flex
+    align-items: center
+    word-break: break-word
+
+  &__btn
+    font-size: 24px
+    color: #2D2323
+    padding: 23px
+    width: 100%
+    max-width: 489px
+    border-radius: 75px
+    background-color: #FB998A
+    margin-bottom: 150px
+
+  &__about
+    margin-bottom: 90px
+
+    &_list
+      display: grid
+      gap: 30px 25px
+      grid-template-columns: repeat(4, 1fr)
+
+    &_item
+      padding: 36px 30px
+      background-color: #FBF9F5
+      border-radius: 10px
+      display: flex
+      flex-direction: column
+      gap: 30px
+
+      ul
+        list-style-type: initial
+
+      &_full_column
+        grid-column: 1/-1
+
+    &_item_title
+      font-weight: 700
+      font-size: 32px
+      line-height: 40px
+      color: #134283
+      margin: 0
+
+    &_item_descr
+      font-weight: 400
+      font-size: 20px
+      line-height: 24px
+      color: #000
+      margin: 0
+
+@media (max-width: 1199.98px)
+  .course_details
+    &__about_item
+      grid-column: 1/-1
+    &__about_list
+      gap: 15px
+@media (max-width: 991.98px)
+  .course_details
+    &__hours
+      grid-template-columns: repeat(5,1fr)
+    &__hours_btn
+      font-size: 20px
+      padding: 15px
+    &__title
+      margin-bottom: 60px
+
+    &__table
+      display: none
+
+    &__table_adaptive
+      display: flex
+      flex-direction: column
+      gap: 5px
+      margin-bottom: 25px
+
+    &__table_row_adaptive
+      display: flex
+      flex-direction: column
+
+    &__table_row_adaptive_block
+      display: flex
+
+      &:first-child
+        div:first-child
+          border-radius: 10px 0 0 0
+        div:last-child
+          border-radius: 0 10px 0 0
+
+      &:last-child
+        div:first-child
+          border-radius: 0 0 0 10px
+        div:last-child
+          border-radius: 0 0 10px 0
+
+    &__table_row_adaptive_title
+      font-weight: 700
+      font-size: 15px
+      color: #000000
+      padding: 12px 15px
+      background-color: #5FE0BE
+      width: 35%
+
+      &_total
+        background-color: #CDC4FB
+
+    &__table_column_adaptive
+      font-weight: 400
+      font-size: 16px
+      color: #000000
+      padding: 12px 15px
+      background-color: #fff
+      flex-grow: 1
+
+@media (max-width: 575.98px)
+  .course_details
+    &__hero
+      margin-bottom: 50px
+    &__btn
+      margin-bottom: 50px
+    &__hours_btn
+      font-size: 16px
+      padding: 10px
+    &__about_item_title
+      font-size: 28px
+      line-height: 1.2
+
+    &__about_item
+      gap: 15px
+      padding: 20px
+    &__table_row_adaptive_title
+      word-break: break-word

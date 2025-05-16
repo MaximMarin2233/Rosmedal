@@ -1,0 +1,258 @@
+[
+    {
+        "model": "olympiads.subject",
+        "pk": 1,
+        "fields": {
+            "code": "ENGLISH_LANGUAGE",
+            "name": "Английский язык"
+        }
+    },
+    {
+        "model": "olympiads.subject",
+        "pk": 2,
+        "fields": {
+            "code": "LIBRARY",
+            "name": "Библиотечное дело"
+        }
+    },
+    {
+        "model": "olympiads.subject",
+        "pk": 3,
+        "fields": {
+            "code": "BIOLOGY",
+            "name": "Биология"
+        }
+    },
+    {
+        "model": "olympiads.subject",
+        "pk": 4,
+        "fields": {
+            "code": "EDUCATIONAL_WORK",
+            "name": "Воспитательная работа"
+        }
+    },
+    {
+        "model": "olympiads.subject",
+        "pk": 5,
+        "fields": {
+            "code": "GEOGRAPHY",
+            "name": "География"
+        }
+    },
+    {
+        "model": "olympiads.subject",
+        "pk": 6,
+        "fields": {
+            "code": "ADDITIONAL_EDUCATION",
+            "name": "Доп. образование"
+        }
+    },
+    {
+        "model": "olympiads.subject",
+        "pk": 7,
+        "fields": {
+            "code": "PRESCHOOL_EDUCATION",
+            "name": "Дошкольное образование"
+        }
+    },
+    {
+        "model": "olympiads.subject",
+        "pk": 8,
+        "fields": {
+            "code": "ART",
+            "name": "ИЗО"
+        }
+    },
+    {
+        "model": "olympiads.subject",
+        "pk": 9,
+        "fields": {
+            "code": "FOREIGN_LANGUAGES",
+            "name": "Иностранные языки"
+        }
+    },
+    {
+        "model": "olympiads.subject",
+        "pk": 10,
+        "fields": {
+            "code": "COMPUTER_SCIENCE",
+            "name": "Информатика"
+        }
+    },
+    {
+        "model": "olympiads.subject",
+        "pk": 11,
+        "fields": {
+            "code": "HISTORY",
+            "name": "История"
+        }
+    },
+    {
+        "model": "olympiads.subject",
+        "pk": 12,
+        "fields": {
+            "code": "CLASS_MANAGEMENT",
+            "name": "Классное руководство"
+        }
+    },
+    {
+        "model": "olympiads.subject",
+        "pk": 13,
+        "fields": {
+            "code": "MATHS",
+            "name": "Математика"
+        }
+    },
+    {
+        "model": "olympiads.subject",
+        "pk": 14,
+        "fields": {
+            "code": "MUSIC",
+            "name": "Музыка"
+        }
+    },
+    {
+        "model": "olympiads.subject",
+        "pk": 15,
+        "fields": {
+            "code": "PRIMARY_CLASSES",
+            "name": "Начальные классы"
+        }
+    },
+    {
+        "model": "olympiads.subject",
+        "pk": 16,
+        "fields": {
+            "code": "LIFE_SAFETY",
+            "name": "ОБЖ"
+        }
+    },
+    {
+        "model": "olympiads.subject",
+        "pk": 17,
+        "fields": {
+            "code": "SPECIAL_EDUCATION",
+            "name": "Обучение детей с ОВЗ"
+        }
+    },
+    {
+        "model": "olympiads.subject",
+        "pk": 18,
+        "fields": {
+            "code": "SOCIAL_SCIENCE",
+            "name": "Обществознание"
+        }
+    },
+    {
+        "model": "olympiads.subject",
+        "pk": 19,
+        "fields": {
+            "code": "ENVIRONMENTAL_STUDIES",
+            "name": "Окружающий мир"
+        }
+    },
+    {
+        "model": "olympiads.subject",
+        "pk": 20,
+        "fields": {
+            "code": "RELIGIOUS_CULTURES",
+            "name": "Основы религиозных культур"
+        }
+    },
+    {
+        "model": "olympiads.subject",
+        "pk": 21,
+        "fields": {
+            "code": "LABOR_SAFETY",
+            "name": "Охрана труда"
+        }
+    },
+    {
+        "model": "olympiads.subject",
+        "pk": 22,
+        "fields": {
+            "code": "LAW",
+            "name": "Право"
+        }
+    },
+    {
+        "model": "olympiads.subject",
+        "pk": 23,
+        "fields": {
+            "code": "RUSSIAN_LITERATURE",
+            "name": "Русская литература"
+        }
+    },
+    {
+        "model": "olympiads.subject",
+        "pk": 24,
+        "fields": {
+            "code": "RUSSIAN_LANGUAGE",
+            "name": "Русский язык"
+        }
+    },
+    {
+        "model": "olympiads.subject",
+        "pk": 25,
+        "fields": {
+            "code": "SOCIAL_PEDAGOGY",
+            "name": "Социальному педагогу"
+        }
+    },
+    {
+        "model": "olympiads.subject",
+        "pk": 26,
+        "fields": {
+            "code": "TECHNOLOGY",
+            "name": "Технология"
+        }
+    },
+    {
+        "model": "olympiads.subject",
+        "pk": 27,
+        "fields": {
+            "code": "PHYSICS",
+            "name": "Физика"
+        }
+    },
+    {
+        "model": "olympiads.subject",
+        "pk": 28,
+        "fields": {
+            "code": "PHYSICAL_CULTURE",
+            "name": "Физкультура"
+        }
+    },
+    {
+        "model": "olympiads.subject",
+        "pk": 29,
+        "fields": {
+            "code": "CHEMISTRY",
+            "name": "Химия"
+        }
+    },
+    {
+        "model": "olympiads.subject",
+        "pk": 30,
+        "fields": {
+            "code": "SCHOOL_PSYCHOLOGIST",
+            "name": "Школьному психологу"
+        }
+    },
+    {
+        "model": "olympiads.subject",
+        "pk": 31,
+        "fields": {
+            "code": "ECONOMICS",
+            "name": "Экономика"
+        }
+    },
+    {
+        "model": "olympiads.subject",
+        "pk": 32,
+        "fields": {
+            "code": "MHK",
+            "name": "МХК"
+        }
+    }
+]

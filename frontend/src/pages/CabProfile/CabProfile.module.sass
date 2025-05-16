@@ -1,0 +1,175 @@
+.cab_profile
+  &__subtitle
+    font-weight: 700
+    font-size: 24px
+    line-height: 30px
+    color: #7D8592
+    margin: 0
+    margin-bottom: 30px
+
+  &__block
+    display: flex
+    flex-direction: column
+
+  &__block_content
+    display: flex
+    gap: 37px
+    margin-bottom: 40px
+
+  &__block_img_wrapper
+    display: flex
+    flex-direction: column
+    gap: 15px
+
+  &__block_img
+    width: 177px
+    height: 177px
+    border-radius: 100%
+    background-color: #ECECEE
+    position: relative
+
+    &::before
+      content: ""
+      position: absolute
+      left: 50%
+      top: 50%
+      transform: translate(-50%, -50%)
+      width: 58px
+      height: 46px
+      background-size: cover
+      background-position: center
+      background-repeat: no-repeat
+      background-image: url("../../assets/cab-profile/cab-profile-block-img.svg")
+
+  &__block_img_btn
+    font-weight: 600
+    font-size: 20px
+    line-height: 25px
+    color: #4F75FE
+    text-align: center
+
+  &__block_text
+    display: flex
+    flex-direction: column
+    gap: 18px
+    flex-grow: 1
+
+  &__block_text_label
+    display: flex
+    flex-direction: column
+    gap: 5px
+
+    p
+      color: red
+      margin: 0
+      font-size: 11px
+      font-weight: 700
+
+  &__block_text_label_date
+    position: relative
+
+    >div
+      width: 100%
+
+    input
+      padding: 16px 19px
+      background-color: #FFFFFF
+      border: 1px solid #FB998A
+      border-radius: 10px
+      width: 100%
+      padding-left: 98px
+      display: block
+
+    span
+      position: absolute
+      left: 19px
+      top: 50%
+      transform: translateY(-50%)
+      font-weight: 600
+      font-size: 10px
+      color: #7D8592
+      z-index: 1
+
+  &__block_text_label_year
+    position: relative
+
+    input
+      width: 100%
+      padding-left: 117px
+
+    span
+      position: absolute
+      left: 19px
+      top: 17px
+      font-weight: 600
+      font-size: 10px
+      color: #7D8592
+
+  &__block_text_content
+    display: flex
+    flex-direction: column
+    gap: 18px
+
+  &__block_text_title
+    font-weight: 600
+    font-size: 14px
+    line-height: 150%
+    color: #2D2323
+    margin: 0
+
+  &__block_text_inputs
+    display: grid
+    grid-template-columns: repeat(3, 1fr)
+    gap: 18px 30px
+    align-items: start
+
+  &__block_text_full_column
+    grid-column: 1/-1
+    display: grid
+    grid-template-columns: repeat(2, 1fr)
+    align-items: start
+    gap: 23px
+
+  &__btn
+    font-size: 16px
+    color: #FBF9F5
+    width: 100%
+    max-width: 224px
+    border-radius: 75px
+    background-color: #4F75FE
+    padding: 23px
+
+.error_message
+  color: red
+  margin: 0
+  font-size: 11px
+  font-weight: 700
+
+@media (max-width: 1199.98px)
+  .cab_profile
+    &__block_content
+      flex-direction: column
+    &__block_text
+      &_full_column
+        gap: 15px
+    &__block_img_wrapper
+      align-items: center
+    &__block_text_inputs
+      gap: 15px
+      grid-template-columns: repeat(2,1fr)
+
+      input[name="diploma_number"],
+      input[name="delivery_city"]
+        grid-column: 1/-1 
+
+@media (max-width: 575.98px)
+  .cab_profile
+    &__block_text_inputs
+      gap: 15px
+      grid-template-columns: 1fr
+      align-items: initial
+    &__btn
+      max-width: initial
+      padding: 15px
+    &__block_text_full_column
+      grid-template-columns: 1fr

@@ -1,0 +1,291 @@
+.about
+  &__form_btn
+    font-weight: 600
+    font-size: 20px
+    color: #2D2323
+    max-width: initial
+    border-radius: 47px
+    background-color: #CDC4FB
+    padding: 20px
+
+  &__hero
+    display: flex
+    justify-content: space-between
+    gap: 15px
+    align-items: flex-start
+    margin-bottom: 64px
+
+  &__hero_text
+    width: 100%
+    max-width: 626px
+
+  &__hero_descr
+    font-weight: 400
+    font-size: 20px
+    line-height: 24px
+    color: #000000
+
+  &__hero_img
+    border-radius: 10px
+
+  &__goals
+    padding: 49px 45px
+    background-color: #FBF9F5
+    border-radius: 10px
+    display: grid
+    gap: 50px
+    grid-template-columns: repeat(3, 1fr)
+    margin-bottom: 64px
+
+  &__goals_item
+    padding-left: 30px
+
+  &__goals_item_img
+    margin-bottom: 31px
+
+  &__goals_item_title
+    font-weight: 700
+    font-size: 40px
+    line-height: 50px
+    margin: 0
+    margin-bottom: 35px
+    position: relative
+
+    &::before
+      content: ""
+      width: 14px
+      height: 161px
+      position: absolute
+      left: -30px
+      bottom: -3px
+      background-color: currentcolor
+      transform: translateX(-50%)
+
+    &_blue
+      color: #4F75FE
+
+    &_red
+      color: #FB998A
+
+    &_green
+      color: #5FE0BE
+
+  &__goals_item_descr
+    font-weight: 400
+    font-size: 20px
+    line-height: 24px
+    color: #7D8592
+    margin: 0
+    padding-left: 10px
+    position: relative
+
+    &::before
+      content: ""
+      width: 2px
+      height: 271px
+      background-color: #2D2323
+      position: absolute
+      left: -30px
+      top: 3px
+
+  &__diplomas
+    background-color: #FBF9F5
+    border-radius: 10px
+    padding: 58px 41px
+    padding-right: 57px
+    display: flex
+    justify-content: space-between
+    align-items: flex-start
+    gap: 15px
+    margin-bottom: 43px
+
+  &__diplomas_text
+    width: 100%
+    max-width: 732px
+    display: flex
+    flex-direction: column
+    gap: 70px
+    
+  &__diplomas_descr
+    font-weight: 400
+    font-size: 20px
+    line-height: 24px
+    color: #2D2323
+    margin: 0
+
+  &__form_wrapper
+    background-color: #FBF9F5
+    box-shadow: 0px 0px 76.2542px 38.1271px rgba(0, 0, 0, 0.03)
+    border-radius: 12.709px
+    padding: 13px
+    display: flex
+    gap: 47px
+    align-items: flex-start
+
+  &__form_contacts
+    padding: 65px 31px
+    background-size: cover
+    background-position: center
+    background-repeat: no-repeat
+    background-image: url("../../assets/about/about-form-contacts-bg.svg")
+    background-color: #CDC4FB
+    border-radius: 12.709px
+    width: 100%
+    max-width: 624px
+
+  &__form_contacts_content
+    width: 100%
+    max-width: 500px
+
+  &__form_title
+    margin: 0
+    margin-bottom: 32px
+    font-weight: 700
+    font-size: 40px
+    line-height: 50px
+    color: #2D2323
+
+  &__form_contacts_list
+    display: flex
+    flex-direction: column
+    gap: 46px
+    margin-bottom: 46px
+
+  &__form_contacts_item
+    position: relative
+    font-weight: 400
+    font-size: 20.3344px
+    line-height: 24px
+    color: #2D2323
+    padding-left: 61px
+
+    &_phone
+      &::before
+        background-image: url("../../assets/about/about-form-phone.svg")
+
+    &_email
+      &::before
+        background-image: url("../../assets/about/about-form-email.svg")
+
+    &::before
+      content: ""
+      position: absolute
+      width: 31px 
+      height: 31px
+      left: 0
+      top: 0
+      background-size: cover
+      background-position: center
+      background-repeat: no-repeat
+
+    a
+      font-weight: 700
+      color: currentcolor
+
+  &__form_contacts_text
+    font-weight: 400
+    font-size: 20.3344px
+    line-height: 24px
+    color: #2D2323
+    margin-bottom: 36px
+
+  &__form_subtitle
+    margin-bottom: 16px
+    margin: 0
+    font-weight: 700
+    font-size: 22px
+    line-height: 27px
+    color: #2D2323
+
+  &__form_contacts_links
+    display: flex
+    flex-direction: column
+    gap: 16px
+  
+  &__form_contacts_links
+    font-weight: 400
+    font-size: 20px
+    line-height: 29px
+    color: #2D2323
+
+  &__form_content
+    width: 100%
+    max-width: 689px
+    padding: 64px 0
+
+  &__form_content_title
+    margin-bottom: 15px
+
+  &__form_content_descr
+    font-weight: 400
+    font-size: 20px
+    line-height: 24px
+    color: #0B2131
+    margin: 0
+    margin-bottom: 44px
+
+  &__form_btn
+    font-size: 20px
+    color: #2D2323
+    padding: 19px
+    background-color: #CDC4FB
+    border-radius: 47px
+    grid-column: 1/-1
+
+
+
+@media (max-width: 1199.98px)
+  .about
+    &__hero
+      flex-direction: column
+    &__diplomas
+      flex-direction: column
+
+@media (max-width: 991.98px)
+  .about
+    &__goals
+      grid-template-columns: 1fr
+
+    &__form_wrapper
+      flex-direction: column
+      padding: 20px
+
+    &__form_contacts
+      max-width: initial  
+
+    &__form_content
+      padding: 30px 0
+      max-width: initial  
+
+@media (max-width: 575.98px)
+  .about
+    &__form_contacts
+      padding: 50px 25px
+    &__form_contacts_item
+      padding-left: 50px
+      font-size: 18px
+    &__goals_item_title
+      font-size: 33px
+      line-height: 1.1
+    &__goals_item_descr
+      font-size: 18px
+      line-height: 1.1
+
+      &::before
+        width: 100%
+        height: 1.3px
+        left: 0
+        top: initial
+        bottom: -35px
+
+
+      &_adaptive
+        &::before
+          display: none
+
+
+
+
+
+
+

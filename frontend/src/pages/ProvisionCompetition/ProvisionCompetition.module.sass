@@ -1,0 +1,72 @@
+.provision_competition
+  &__title
+    margin-bottom: 52px
+
+  &__download
+    margin-bottom: 40px
+    padding-left: 67px
+    position: relative
+
+    &::before
+      content: ""
+      position: absolute
+      width: 50px
+      height: 50px
+      top: 50%
+      left: 0
+      transform: translateY(-50%)
+      background-size: cover
+      background-position: center
+      background-repeat: no-repeat
+      background-image: url("../../assets/provision-competition/provision-competition-download.svg")
+    
+    span
+      font-weight: 400
+      font-size: 32px
+      line-height: 38px
+      text-decoration-line: underline
+      color: #2D2323
+
+    &_document
+      padding-left: 74px
+      
+      &::before
+        width: 48px
+        height: 48px
+        background-image: url("../../assets/provision-competition/provision-competition-document.svg")
+        
+
+  &__block_title
+    font-weight: 700
+    font-size: 20px
+    line-height: 25px
+    color: #2D2323
+    margin: 0
+    margin-bottom: 34px
+
+  &__block_descr
+    font-weight: 400
+    font-size: 20px
+    line-height: 24px
+    color: #2D2323
+    margin: 0
+    margin-bottom: 34px
+
+
+@media (max-width: 575.98px) 
+  .provision_competition
+    &__block_descr,
+    &__block_title
+      font-size: 17px
+      line-height: 1.2
+    &__download
+      font-size: 25px
+      padding-left: 60px
+
+      span
+        font-size: 25px
+        line-height: 1.2
+
+      &::before
+        width: 40px
+        height: 40px

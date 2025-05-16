@@ -1,0 +1,65 @@
+[
+    {
+        "model": "docs.documentvariation",
+        "pk": 1,
+        "fields": {
+            "title": "Диплом победителя в творческом конкурсе",
+            "price": "200.00",
+            "tag": "ТК"
+        }
+    },
+    {
+        "model": "docs.documentvariation",
+        "pk": 2,
+        "fields": {
+            "title": "Благодарственное письмо",
+            "price": "200.00",
+            "tag": "БП"
+        }
+    },
+    {
+        "model": "docs.documentvariation",
+        "pk": 3,
+        "fields": {
+            "title": "Свидетельство о публикации в СМИ",
+            "price": "200.00",
+            "tag": "СВ"
+        }
+    },
+    {
+        "model": "docs.documentvariation",
+        "pk": 4,
+        "fields": {
+            "title": "Диплом победителя олимпиады",
+            "price": "200.00",
+            "tag": "ДО"
+        }
+    },
+    {
+        "model": "docs.documentvariation",
+        "pk": 5,
+        "fields": {
+            "title": "Сертификат победителя олимпиады",
+            "price": "200.00",
+            "tag": "СО"
+        }
+    },
+    {
+        "model": "docs.documentvariation",
+        "pk": 6,
+        "fields": {
+            "title": "Удостоверение о повышении квалификации",
+            "price": null,
+            "tag": "КПК"
+        }
+    },
+    {
+        "model": "docs.documentvariation",
+        "pk": 7,
+        "fields": {
+            "title": "Диплом о профессиональной переподготовке",
+            "price": null,
+            "tag": "КПП"
+        }
+    }
+]

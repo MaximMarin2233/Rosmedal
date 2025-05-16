@@ -1,0 +1,33 @@
+.breadcrumb
+  display: flex
+  align-items: center
+
+  &_nav
+    margin-bottom: 30px
+
+  &__item
+    color: #B2B2B2
+    display: flex
+    align-items: center
+
+    &:not(:last-child)
+      &::after
+        content: "/"
+        display: block
+        margin: 0 17px
+
+  &__btn
+    color: #7D8592
+
+  &__item,
+  &__btn
+    font-weight: 400
+    font-size: 20px
+    line-height: 24px
+
+@media (max-width: 575.98px) 
+  .breadcrumb
+    flex-direction: column
+  
+
+

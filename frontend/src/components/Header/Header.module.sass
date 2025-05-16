@@ -1,0 +1,291 @@
+.header
+	background-color: #fff
+	padding: 9px 0 5px
+
+	&_sale
+		background-color: #134283
+		border-radius: 300px
+
+		&__container
+			display: flex
+			align-items: center
+			justify-content: space-between
+
+		&__text
+			font-weight: 700
+			font-size: 24px
+			line-height: 101%
+			text-align: center
+			color: #FFFFFF
+
+		&__btn
+			padding: 15px 40px
+			background-color: #FFFFFF
+			border-radius: 10px
+			font-weight: 500
+			font-size: 19px
+			color: #000000
+
+		&__close
+			width: 35px
+			height: 35px
+			background-size: cover
+			background-position: center
+			background-repeat: no-repeat
+			background-image: url("../../assets/header-sale/header-sale-close.svg")
+
+	&__btns
+		display: flex
+		gap: 10px
+
+	&__content
+		display: flex
+		justify-content: space-between
+		align-items: center
+		gap: 15px
+
+	&__logo
+		display: flex
+		align-items: center
+		gap: 21px
+
+	&__logo_img
+		cursor: pointer
+
+	&__logo_text
+		font-weight: 500
+		font-size: 15px
+		line-height: 17px
+		color: #2D2323
+		width: 100%
+		max-width: 640px
+
+	&__search
+		width: 100%
+		max-width: 200px
+
+		input
+			padding: 17px 25px
+			padding-right: 53px
+
+			&,
+			&::placeholder
+				font-weight: 500
+				font-size: 15px
+
+		button
+			right: 25px
+
+	&__btn
+		display: flex
+		align-items: center
+		gap: 33px
+		font-size: 16px
+		font-weight: 600
+		padding: 16px 30px
+		background-color: #134283
+		border-radius: 10px
+
+	&__nav_list
+		display: flex
+		align-items: center
+		gap: 10px
+
+	&__nav_item
+		font-weight: 500
+		font-size: 19px
+		color: #2D2323
+		white-space: nowrap
+		position: relative
+		padding: 15px 20px
+		padding-right: 43px
+
+		&:hover
+			cursor: pointer
+
+			ul
+				opacity: 1
+				transform: translate(-50%, 100%)
+				visibility: visible
+
+		&::after
+			content: ""
+			width: 13px
+			height: 13px
+			background-size: cover
+			background-position: center
+			background-repeat: no-repeat
+			background-image: url("../../assets/header/header-arrow.svg")
+			position: absolute
+			right: 15px
+			top: 50%
+			transform: translateY(-50%)
+
+		&_active
+			background-color: #1691D0
+			border-radius: 12px
+
+	&__dropdown
+		position: absolute
+		bottom: -10px
+		left: 50%
+		background-color: #fff // или другой цвет
+		box-shadow: 0 8px 16px rgba(0,0,0,0.2)
+		z-index: 1
+		opacity: 0
+		transform: translate(-50%, 102%)
+		visibility: hidden
+		transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out, visibility 0.3s ease-in-out
+		padding: 7.5px 0
+		border-radius: 15px
+		box-shadow: 0 0 15px rgb(0 0 0 / 30%)
+		display: flex
+		flex-direction: column
+
+	&__dropdown_item
+		padding: 7.5px 15px 7.5px
+		transition: background-color 0.3s ease-in-out
+		border-radius: 15px
+
+		&:hover
+			background-color: rgba(251, 153, 138, 0.5)
+
+	&__profile
+		padding: 9px 8px
+		background-color: #FBF9F5
+		border-radius: 10px
+		display: flex
+		align-items: center
+		gap: 6px
+		position: relative
+
+	&__profile_email
+		font-weight: 700
+		font-size: 14px
+		line-height: 19px
+		color: #404040
+
+	&__profile_arrow
+		width: 18px
+		height: 18px
+		background-size: cover
+		background-position: center
+		background-repeat: no-repeat
+		background-image: url("../../assets/header/header-profile-arrow.svg")
+
+	&__profile_dropdown
+		position: absolute
+		bottom: 0
+		left: 0
+		z-index: 11
+		transform: translateY(110%)
+		width: 100%
+		background-color: #FBF9F5
+		border-radius: 0 0 24px 24px
+		display: flex
+		flex-direction: column
+		padding: 21px 15px
+		padding-top: 0
+		opacity: 0
+		visibility: hidden
+		transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out, visibility 0.3s ease-in-out
+
+		&_active
+			transform: translateY(100%)
+			opacity: 1
+			visibility: visible
+
+	&__profile_dropdown_btn
+		text-align: right
+		padding: 11px
+		font-weight: 600
+		font-size: 14px
+		color: #7D8592
+		border-radius: 14px
+
+		&:hover
+			background-color: #CBD5F8
+
+.cab_profile
+	&__block_img
+		width: 44px
+		height: 44px
+		border-radius: 100%
+		background-color: #ECECEE
+		position: relative
+
+		&::before
+			content: ""
+			position: absolute
+			left: 50%
+			top: 50%
+			transform: translate(-50%, -50%)
+			width: 14px
+			height: 11px
+			background-size: cover
+			background-position: center
+			background-repeat: no-repeat
+			background-image: url("../../assets/cab-profile/cab-profile-block-img.svg")
+
+@media (max-width: 1199.98px)
+	.header
+		padding: 30px 0
+
+		&__logo_text
+			font-size: 13px
+
+		&__nav
+			top: 50px
+
+		&__nav_list
+			gap: 15px
+
+		&__nav_item
+			font-size: 17px
+			padding-right: 35px
+
+@media (max-width: 991.98px)
+	.header
+		border-radius: 0 0 50px 50px
+		&__logo_text
+			display: none
+
+		&__nav
+			padding: 14px 15px
+			top: 30px
+
+		&__nav_list
+			gap: 10px
+
+		&__nav_item
+			font-size: 14px
+
+@media (max-width: 767.98px)
+	.header
+		&__nav
+			display: none
+		&__search
+			display: none
+			&_adaptive
+				display: block
+		&__btn
+			display: none
+		&__logo
+			position: relative
+			z-index: 100
+
+		&__logo_text_adaptive
+			display: block
+
+		&__btn_adaptive
+			display: block
+		&__profile
+			display: none
+
+			&_adaptive
+				display: flex
+				background-color: initial
+
+		&__profile_dropdown_btn
+			text-align: left
+			font-size: 16px

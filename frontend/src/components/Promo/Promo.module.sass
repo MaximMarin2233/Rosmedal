@@ -1,0 +1,234 @@
+.promo
+  margin-bottom: 120px
+
+  >div
+    padding: 0
+
+  &__content
+    background-color: #134283
+    border-radius: 10px
+    padding: 50px 42px
+
+    &:not(:last-child)
+      margin-bottom: 100px
+
+  &__content_diplomas
+    background-size: cover
+    background-position: center bottom
+    background-repeat: no-repeat
+    background-image: url("../../assets/promo/promo-diplomas-bg.svg")
+    background-color: #fff
+
+  &__title
+    text-transform: uppercase
+    display: flex
+    gap: 50px
+    line-height: 68px
+    color: #fff
+
+  &__title_label
+    position: relative
+
+    span
+      position: relative
+
+    &::before
+      content: ""
+      position: absolute
+      left: 50%
+      top: 50%
+      transform: translate(-50%, -50%) rotate(1deg)
+      width: 135%
+      height: 100%
+      background-color: #FF662C
+      border-radius: 10px
+
+    &_purple
+      &::before
+        background-color: #CDC4FB
+
+  &__descr
+    font-weight: 700
+    font-size: 32px
+    line-height: 34px
+    color: #fff
+    margin: 0
+    margin-bottom: 39px
+
+  &__inner
+    display: flex
+    justify-content: space-between
+    align-items: flex-start
+    gap: 15px
+    margin-bottom: 39px
+
+  &__timer_wrapper
+    margin-top: 33px
+    width: 100%
+    max-width: 666px
+    display: flex
+    flex-direction: column
+    gap: 40px
+
+  &__timer_outer
+    position: relative
+
+    &::before
+      content: ""
+      position: absolute
+      left: 50%
+      top: 50%
+      transform: translate(-50%, -50%)
+      background-color: #1691D0
+      border-radius: 10px
+      width: 95%
+      height: 110%
+
+  &__timer
+    background-color: #FFFFFF
+    border-radius: 10px
+    padding: 47px 60px 70px
+    position: relative
+
+  &__timer_title
+    margin: 0
+    margin-bottom: 24px
+    font-weight: 700
+    font-size: 36px
+    line-height: 38px
+    color: #134283
+
+  &__timer_content
+    display: grid
+    grid-template-columns: 0.8fr repeat(3, 1fr)
+    gap: 3px
+
+  &__timer_content_item
+    display: flex
+    flex-direction: column
+    gap: 30px
+
+  &__timer_content_item_val
+    width: 100%
+    background-color: #1691D0
+    padding: 20px
+    display: flex
+    justify-content: center
+    align-items: center
+    font-weight: 700
+    font-size: 40px
+    color: #FFFFFF
+
+    &_first
+      border-radius: 11px 0 0 11px
+
+    &_last
+      border-radius: 0 11px 11px 0
+
+  &__timer_content_item_text
+    font-weight: 400
+    font-size: 32px
+    line-height: 33px
+    color: #134283
+
+  &__timer_btn
+    color: #FFFFFF
+    font-size: 24px
+    padding: 23px
+    border-radius: 75px
+    background-color: #4F75FE
+    width: 100%
+    max-width: 489px
+
+  &__text
+    font-weight: 400
+    font-size: 20px
+    line-height: 21px
+    color: #fff
+
+  &__templates
+    display: flex
+    flex-direction: column
+    align-items: center
+    gap: 10px
+
+    h2
+      margin: 0
+      text-transform: initial
+      width: 100%
+      max-width: 1036px
+      color: #134283
+
+@media (max-width: 1399.98px)
+  .promo
+    >div
+      padding: 0
+
+    &__inner
+      padding: 0
+      align-items: center
+
+      img
+        width: 381px
+        height: auto
+
+    &__timer_wrapper
+      margin: 0
+
+    &__timer_content_item_text
+      font-size: 28px
+
+@media (max-width: 1199.98px)
+  .promo
+    &__inner
+      flex-direction: column-reverse
+
+@media (max-width: 991.98px)
+  .promo
+    &__timer_btn
+      width: 100%
+      max-width: initial
+
+@media (max-width: 575.98px)
+  .promo
+    margin-bottom: 50px
+    &__content
+      padding: 22px 10px
+      &:not(:last-child)
+        margin-bottom: 50px
+
+    &__title
+      flex-direction: column
+      gap: initial
+      font-size: 41px
+      line-height: 52px
+
+      &_diplomas
+        font-size: 30px
+        line-height: 35px
+
+    &__descr
+      font-size: 29px
+      line-height: 31px
+
+    &__title_label
+      &::before
+        width: 60%
+
+    &__timer
+      padding: 20px 26px 30px
+
+      &::after
+        width: 100px
+        height: 100px
+        right: -22px
+        top: -259px
+
+    &__timer_title
+      font-size: 30px
+
+    &__timer_content_item_val
+      font-size: 30px
+
+    &__timer_content_item_text
+      font-size: 24px

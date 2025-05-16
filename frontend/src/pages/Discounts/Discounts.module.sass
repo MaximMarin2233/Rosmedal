@@ -1,0 +1,72 @@
+.discounts
+  &__title
+    margin-bottom: 45px
+
+  &__list
+    display: flex
+    flex-direction: column
+    gap: 42px
+
+  &__item
+    border-radius: 10px
+    display: flex
+    justify-content: space-between
+    gap: 20px
+
+  &__item_text
+    width: 100%
+    max-width: 805px
+    padding: 65px 45px
+    padding-right: 0
+    display: flex
+    flex-direction: column
+    align-items: flex-start
+
+  &__item_title
+    font-weight: 700
+    font-size: 40px
+    line-height: 50px
+    color: #2D2323
+    margin: 0
+    margin-bottom: 15px
+
+  &__item_descr
+    font-weight: 400
+    font-size: 20px
+    line-height: 24px
+    color: #2D2323
+    margin: 0
+    margin-bottom: 15px
+
+  &__item_btn
+    padding: 23px
+    font-size: 24px
+    border-radius: 75px
+    margin-top: auto
+    width: 100%
+    max-width: 489px
+
+  &__img
+    height: 100%
+
+@media (max-width: 1199.98px)
+  .discounts
+    &__item
+      flex-direction: column
+    &__item_text
+      padding: 50px 40px 15px
+      padding-right: 40px
+      max-width: initial
+
+@media (max-width: 575.98px)
+  .discounts
+    &__item_title
+      font-size: 30px
+      line-height: 1.1
+    &__item_descr
+      font-size: 18px
+      line-height: 1.1
+  
+    &__item_btn
+      padding: 15px
+      font-size: 18px

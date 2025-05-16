@@ -1,0 +1,248 @@
+.cab_documents
+  &__block
+    display: flex
+    flex-direction: column
+    gap: 30px
+
+  &__subtitle
+    font-weight: 700
+    font-size: 24px
+    line-height: 30px
+    color: #2D2323
+    margin: 0
+    margin-bottom: 30px
+
+    &_promo
+      margin-bottom: 15px
+
+  &__accordion_title
+    font-weight: 700
+    font-size: 24px
+    line-height: 30px
+    color: #2D2323
+    margin: 0
+
+  &__accordion_control
+    padding: 18px
+    background-color: #EEE9DF
+    border-radius: 10px
+    border: none
+
+  &__accordion_icon
+    width: 31px
+    height: 31px
+    top: 50%
+    transform: translateY(-50%)
+    right: 16px
+
+  &__accordion_list
+    width: 100%
+    max-width: 650px
+
+    &_full_width
+      max-width: initial
+      margin-bottom: 51px
+
+    &_paid
+      max-width: initial
+      margin-bottom: 40px
+
+  &__accordion_content
+    padding: 0 16px
+    transition-timing-function: linear
+    transition-duration: 0.2s
+
+  &__accordion_inner
+    padding: 17px 16px
+    background-color: #EEE9DF
+    border-radius: 10px
+
+  &__accordion_inner_list
+    display: grid
+    grid-template-columns: repeat(2, 1fr)
+    gap: 17px
+    justify-items: center
+
+    &_paid
+      grid-template-columns: repeat(4, 1fr)
+
+  &__diplom_wrapper
+    position: relative
+
+  &__diplom_check
+    padding: 6px 11px
+    position: absolute
+    top: -5px
+    left: 50%
+    z-index: 1
+    transform: translateX(-50%)
+    width: 85%
+    background-color: rgb(255, 255, 255)
+    border-radius: 9.40988px
+    display: flex
+    align-items: center
+    justify-content: space-between
+    gap: 15px
+
+    input
+      width: 23px
+      height: 23px
+
+  &__documents_wrapper
+    display: grid
+    align-items: start
+    grid-template-columns: repeat(2, 1fr)
+    gap: 40px
+
+  &__documents_price_content
+    padding: 20px 0
+    border-top: 1px solid #7D8592
+    border-bottom: 1px solid #7D8592
+    flex-grow: 1
+    margin-bottom: 15px
+
+  &__documents_inf_wrapper
+    display: flex
+    flex-direction: column
+    gap: 14px
+
+  &__documents_inf
+    display: grid
+    grid-template-columns: repeat(3, 1fr)
+    gap: 15px
+    font-weight: 600
+    font-size: 14px
+    line-height: 17px
+    color: #7D8592
+
+    span
+      color: #2D2323
+
+  &__documents_total
+    font-weight: 800
+    font-size: 20px
+    line-height: 25px
+    color: #2D2323
+    display: flex
+    align-items: center
+    justify-content: space-between
+    gap: 15px
+
+  &__documents_btn
+    padding: 13px
+    border-radius: 75px
+    color: #FBF9F5
+    background-color: #4F75FE
+    width: 100%
+    font-size: 16px
+    font-weight: 600
+
+  &__promo_title
+    margin: 0
+    margin-bottom: 15px
+    font-weight: 600
+    font-size: 14px
+    line-height: 17px
+    color: #2D2323
+
+  &__promo
+    display: flex
+    align-items: center
+    gap: 15px
+    margin-bottom: 15px
+
+  &__promo_input
+    padding: 10px 15px
+    background: #FFFFFF
+    border: 0.785016px solid #FB998A
+    border-radius: 10px
+    flex-grow: 1
+
+    &,
+    &::placeholder
+      font-weight: 600
+      font-size: 11px
+      color: #7D8592
+
+    &::placeholder
+      opacity: 0.8
+
+  &__promo_btn
+    padding: 12px 35px
+    background-color: #4F75FE
+    border: 1px solid #4F75FE
+    border-radius: 10px
+    display: flex
+    align-items: center
+    gap: 8px
+    font-weight: 500
+    font-size: 14px
+    color: #FFFFFF
+
+  &__delete_btn
+    width: 26px
+    height: 26px
+    background-size: cover
+    background-position: center
+    background-repeat: no-repeat
+    background-image: url("../../assets/cab-documents/cab-documents-delete.svg")
+
+  &__download_btn
+    font-weight: 600
+    font-size: 16px
+    color: #FBF9F5
+    background-color: #4F75FE
+    border-radius: 9.40988px
+    padding: 5px 11px
+    width: 100%
+    box-sizing: border-box
+    display: flex
+    align-items: center
+    justify-content: space-between
+    gap: 15px
+
+  &__download_all_btn
+    padding: 23px 32px
+    background-color: #4F75FE
+    border-radius: 75.2133px
+    font-weight: 600
+    font-size: 16px
+    color: #FBF9F5
+    position: relative
+    width: 100%
+
+@media (max-width: 1399.98px)
+  .cab_documents
+    &__documents_wrapper
+      grid-template-columns: 1fr
+    &__accordion_inner_list_paid
+      grid-template-columns: repeat(3,1fr)
+
+@media (max-width: 1199.98px)
+  .cab_documents
+    &__accordion_inner_list_paid
+      grid-template-columns: repeat(2,1fr)
+
+@media (max-width: 991.98px)
+  .cab_documents
+    &__accordion_inner_list
+      gap: 20px 5px
+
+    &__accordion_inner
+      padding: 10px 5px
+
+@media (max-width: 575.98px)
+  .cab_documents
+    &__promo
+      flex-direction: column
+      align-items: initial
+    &__promo_btn
+      justify-content: center
+    &__accordion_inner_list
+      grid-template-columns: 1fr
+
+    &__accordion_title
+      font-size: 20px
+
+    &__block
+      overflow-y: hidden

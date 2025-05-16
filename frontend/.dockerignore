@@ -1,0 +1,16 @@
+# Исключить папку node_modules из контекста сборки
+node_modules
+# Исключить другие нежелательные файлы и папки
+.git
+.gitignore
+.env
+.env.*
+*.log
+__pycache__
+*.pyc
+*.pyo
+*.pyd
+.idea
+.vscode
+.DS_Store
+Thumbs.db

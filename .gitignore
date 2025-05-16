@@ -1,0 +1,13 @@
+node_modules
+frontend/dist
+
+**venv
+**__pycache__
+**.pyc
+backend/**/media
+**static
+**.sqlite3
+**.env
+**error.log
+
+.DS_Store

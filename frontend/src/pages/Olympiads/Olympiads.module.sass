@@ -1,0 +1,158 @@
+.olympiads
+  &__faq_title
+    margin-bottom: 80px
+
+  &__hero_btn
+    max-width: 345px !important
+    margin-bottom: 20px !important
+
+  &__etc_title
+    font-weight: 500
+    font-size: 24px
+    line-height: 48px
+    color: #FFFFFF
+
+  &__etc_content
+    display: flex
+    gap: 55px
+
+  &__etc_list
+    font-weight: 400
+    font-size: 18px
+    line-height: 22px
+    color: #FFFFFF
+
+.advantages__block_bg
+  &_1
+    background-image: url("../../assets/olympiads/olympiads-advantages-bg-1.png")
+
+  &_2
+    background-image: url("../../assets/olympiads/olympiads-advantages-bg-2.png")
+
+.olympiads_steps
+  margin-bottom: 150px
+
+  &__title
+    margin-bottom: 70px
+
+  &__list
+    display: grid
+    grid-template-columns: repeat(3, 1fr)
+    gap: 20px
+    margin-bottom: 164px
+    position: relative
+
+  &__item
+    padding: 25px
+    background-color: #FFFFFF
+    border: 1px solid #000000
+    border-radius: 10px
+    display: flex
+    flex-direction: column
+    gap: 10px
+
+  &__item_title
+    font-weight: 700
+    font-size: 24px
+    line-height: 29px
+    color: #000000
+    margin: 0
+
+  &__item_text
+    font-weight: 400
+    font-size: 18px
+    line-height: 22px
+    color: #000000
+
+  &__btn
+    padding: 20px 50px
+    background-color: #FF662C
+    border-radius: 10px
+    font-weight: 600
+    font-size: 24px
+    color: #FFFFFF
+    margin: 0 auto
+    max-width: 345px
+    align-items: center
+    justify-content: center
+
+  &__img
+    position: absolute
+    left: 50%
+    transform: translate(-50%, 100%)
+    bottom: 0
+
+.olympiads_results
+  &__item_title
+    font-weight: 700
+    font-size: 64px
+    line-height: 68px
+    color: #4F75FE
+
+  &__item_val
+    font-weight: 700
+    font-size: 40px
+    line-height: 50px
+    color: #2D2323
+
+.olympiads_participate
+  &__content
+    border-radius: 10px
+    background-color: #CDC4FB
+    background-size: cover
+    background-position: center
+    background-repeat: no-repeat
+    background-image: url("../../assets/olympiads/olympiads-participate-bg.svg")
+    padding: 30px 40px
+    padding-right: 100px
+    display: flex
+    align-items: center
+    justify-content: space-between
+    gap: 15px
+
+  &__text
+    width: 100%
+    max-width: 781px
+    display: flex
+    flex-direction: column
+    gap: 70px
+
+  &__btns
+    display: flex
+    flex-direction: column
+    gap: 20px
+
+  &__btn
+    font-size: 24px
+    padding: 23px
+    width: 100%
+    max-width: 489px
+    border-radius: 75px
+
+    &_white
+      color: #fff
+
+    &_dark
+      color: #2D2323
+
+@media (max-width: 991.98px)
+  .olympiads_participate
+    &__content
+      flex-direction: column
+
+  .olympiads_steps
+    &__list
+      grid-template-columns: 1fr
+
+@media (max-width: 575.98px)
+  .olympiads_steps
+    &__item_title
+      font-size: 35px
+      line-height: 1.1
+  .olympiads_participate
+    &__content
+      padding: 25px
+      padding-right: 25px
+
+    &__text
+      gap: 5px

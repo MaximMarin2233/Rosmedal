@@ -1,0 +1,53 @@
+services:
+
+  redis:
+    image: redis:6.0-alpine
+    volumes:
+      - redis_data:/var/lib/redis/data
+
+  celery:
+    build:
+      context: ./backend/
+      dockerfile: Dockerfile
+    volumes:
+      - ./backend/rosmedal:/usr/src/backend/rosmedal
+    command: celery -A core worker -l info
+    depends_on:
+      - redis
+      - django
+
+  celery_beat:
+    build:
+      context: ./backend/
+      dockerfile: Dockerfile
+    volumes:
+      - ./backend/rosmedal:/usr/src/backend/rosmedal
+    command: celery -A core beat -l info
+    depends_on:
+      - redis
+
+  next:
+    build:
+      context: frontend/
+      args:
+        REACT_APP_API_BASE_URL: ${REACT_APP_API_BASE_URL}
+    environment:
+      - REACT_APP_API_BASE_URL=${REACT_APP_API_BASE_URL}
+    volumes:
+      - ./frontend:/app  # Монтируем папку фронтенда для отслеживания изменений
+      - /app/node_modules  # Исключаем node_modules из монтирования
+    ports:
+      - "3003:3003"  # Проброс порта для локальной разработки
+    command: sh -c "npm install && npm run dev"  # Используем npm run dev для запуска Vite
+    depends_on:
+      - django
+
+  django:
+    build:
+      context: ./backend/
+    volumes:
+      - ./backend/:/usr/src/backend
+
+volumes:
+  postgres_data:
+  redis_data:

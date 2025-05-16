@@ -1,0 +1,139 @@
+.courses_discount
+  margin-bottom: 120px
+  
+  &__content
+    padding: 60px 40px 
+    padding-bottom: 80px
+    border-radius: 10px
+    background-color: #5FE0BE
+    background-size: cover
+    background-position: center
+    background-repeat: no-repeat
+    background-image: url("../../../assets/courses-discount/courses-discount-bg.svg")
+
+  &__title
+    margin-bottom: 34px
+
+  &__descr
+    margin: 0
+    margin-bottom: 60px
+    font-weight: 500
+    font-size: 20px
+    line-height: 24px
+    color: #2D2323
+
+  &__item
+    padding: 50px 20px
+    background-color: #FBF9F5
+    border-radius: 10px
+    display: flex
+    flex-direction: column
+    gap: 15px
+    height: 100%
+
+  &__item_val
+    font-weight: 700
+    font-size: 64px
+    line-height: 48px
+    color: #4F75FE
+
+  &__item_text
+    font-weight: 600
+    font-size: 20px
+    line-height: 24px
+    color: #2D2323
+
+  &__item_descr
+    font-weight: 400
+    font-size: 16px
+    line-height: 18px
+    color: #848484
+
+  &__item_price
+    display: flex
+    flex-direction: column
+    gap: 10px
+    font-weight: 800
+    font-size: 20px
+    line-height: 24px
+    color: #FB998A
+    position: relative
+
+    span
+      font-weight: 400
+      font-size: 13px
+      text-decoration-line: line-through
+      color: #7D8592
+
+  &__item_price_choice
+    font-weight: 500
+    font-size: 10px
+    line-height: 9px
+    text-align: center
+    color: #FFFFFF
+    background-color: #FB998A
+    padding: 8px 15px
+    border-radius: 79px
+    transform: rotate(9deg)
+    position: absolute
+    right: 0
+    top: 10px
+
+  &__swiper_wrapper
+    position: relative
+    padding: 0 45px
+
+  &__swiper_prev,
+  &__swiper_next
+    position: absolute
+    width: 57px
+    height: 43px
+    background-size: cover
+    background-position: center
+    background-repeat: no-repeat
+    cursor: pointer
+
+  &__swiper_prev
+    background-image: url("../../../assets/courses-discount/courses-discount-swiper-prev.svg")
+    left: -24px
+    top: 50%
+
+  &__swiper_next
+    background-image: url("../../../assets/courses-discount/courses-discount-swiper-next.svg")
+    right: -24px
+    top: -89px
+    transform: translateY(-100%)
+
+@media (max-width: 1199.98px)
+  .courses_discount
+    >div
+      padding: 0
+
+@media (max-width: 991.98px)
+  .courses_discount
+    &__swiper_next
+      top: 48px
+
+    &__swiper_prev
+      top: 270px
+
+@media (max-width: 575.98px)
+  .courses_discount
+    margin-bottom: 50px
+    &__content
+      padding: 25px
+      padding-bottom: 140px
+
+    &__swiper_prev
+      top: 360px
+      left: 100px
+
+    &__swiper_next
+      right: 100px
+      top: 360px
+      transform: none
+
+    &__swiper_wrapper 
+      padding: 0
+
+

@@ -1,0 +1,113 @@
+@keyframes modalFadeIn
+  from
+    opacity: 0
+
+  to
+    opacity: 1
+
+@keyframes modalFadeOut
+  from
+    opacity: 1
+
+  to
+    opacity: 0
+
+.modalOverlay
+  background-color: rgba(0, 0, 0, 0.75)
+  opacity: 0
+  animation: modalFadeIn 0.3s forwards
+  position: fixed
+  inset: 0
+  z-index: 101
+  overflow-x: hidden
+  overflow-y: auto
+  text-align: center
+
+  &::before
+    content: ""
+    display: inline-block
+    vertical-align: middle
+    height: 100%
+
+  > div
+    display: inline-block
+    position: relative
+    vertical-align: middle
+    margin: 50px auto
+    border-radius: 10px
+    padding: 20px
+    width: 1000px
+    text-align: left
+    background-color: #fff
+    cursor: default
+    top: initial
+    right: initial
+    left: initial
+    bottom: initial
+    transform: none
+    
+
+.modalOverlayAfterClose
+  animation: modalFadeOut 0.3s forwards
+
+.modalContent
+  position: absolute
+  top: 50%
+  left: 50%
+  right: auto
+  bottom: auto
+  margin-right: -50%
+  transform: translate(-50%, -50%)
+  background: white
+  padding: 20px 45px 45px
+  border-radius: 10px
+  opacity: 0
+  animation: modalFadeIn 0.3s forwards
+  width: 100%
+  max-width: 500px
+
+  &_olympiad
+    max-width: 705px
+
+  &_docs_check
+    background: #EEE9DF
+    border-radius: 10px
+    padding: 55px 40px 31px
+    width: 100%
+    max-width: 540px
+    display: flex
+    justify-content: center
+    align-items: center
+
+.modalContentAfterClose
+  animation: modalFadeOut 0.3s forwards
+
+.modalClose
+  position: absolute
+  width: 25px
+  height: 25px
+  right: 20px
+  top: 20px
+  transform: rotate(45deg)
+
+  &::before,
+  &::after
+    content: ""
+    position: absolute
+    left: 50%
+    top: 50%
+    transform: translate(-50%, -50%)
+    background-color: #8B8B8B
+    border-radius: 2px
+
+  &::before
+    width: 100%
+    height: 2px
+
+  &::after
+    width: 2px
+    height: 100%
+
+@media (max-width: 767.98px)
+  .modalContent
+    width: 90% !important

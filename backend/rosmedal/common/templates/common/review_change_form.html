@@ -1,0 +1,13 @@
+{% extends 'admin/change_form.html' %}
+
+{% block submit_buttons_bottom %}
+    {{ block.super }}
+    {% if original %}
+        {% if not original.is_confirmed %}
+            <div class="submit-row">
+                <input type="submit" value="Начислить бонусы" name="_confirm">
+                <p></p>
+            </div>
+        {% endif %}
+    {% endif %}
+{% endblock %}

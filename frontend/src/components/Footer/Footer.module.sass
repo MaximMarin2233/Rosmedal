@@ -1,0 +1,150 @@
+.footer
+  padding: 90px 0 120px
+  background-color: #FBF9F5
+
+  &__content
+    display: flex
+    align-items: center
+    justify-content: space-between
+    gap: 15px
+    padding-bottom: 42px
+    border-bottom: 1px solid #E5E5E5
+
+  &__logo
+    display: flex
+    flex-direction: column
+    gap: 16px
+    width: 100%
+    max-width: 342px
+
+    img
+      transform: translateX(-6px)
+  &__logo_text
+    font-weight: 400
+    font-size: 13px
+    line-height: 19px
+    color: #2D2323
+    text-decoration: none
+
+  &__nav
+    display: grid
+    grid-template-columns: repeat(3, 1fr)
+    gap: 50px
+
+  &__nav_block
+    display: flex
+    flex-direction: column
+    gap: 16px
+
+  &__nav_title
+    font-weight: 700
+    font-size: 22px
+    line-height: 27px
+    color: #2D2323
+    margin: 0
+    cursor: pointer
+
+    &_blue
+      color: #4F75FE
+      padding: 15px 27px
+      background-color: #1691D0
+      border-radius: 10px
+      font-weight: 700
+      font-size: 20px
+      color: #FFFFFF
+
+  &__nav_list
+    display: flex
+    flex-direction: column
+    gap: 15px
+
+  &__nav_item
+    font-weight: 400
+    font-size: 20px
+    line-height: 24px
+    color: #2D2323
+    cursor: pointer
+
+  &__nav_social
+    display: flex
+    align-items: center
+    gap: 11px
+    color: currentcolor
+    padding: 15px
+    width: 100%
+    border-radius: 10px
+
+    &_vk
+      background-color: #CBEEFF
+      color: #1691D0
+
+    &_ok
+      background: #FFE5BF
+      color: #FF9D0A
+
+    &_tg
+      background: #BFE7FF
+      color: #1691D0
+
+  &__copyright
+    padding-top: 42px
+    display: flex
+    align-items: center
+    justify-content: space-between
+    gap: 15px
+
+  &__copyright_text
+    font-weight: 400
+    font-size: 18.979px
+    line-height: 27px
+    color: rgba(64, 64, 64, 0.6)
+
+    &_pointer
+      cursor: pointer
+
+  &__copyright_links
+    display: flex
+    align-items: center
+    gap: 32px
+
+  &__nav_social_request
+    display: flex
+    justify-content: center
+    align-items: center
+    padding: 15px
+    background-color: #1691D0
+    border-radius: 10px
+    width: 100%
+    font-weight: 400
+    font-size: 20px
+    color: #FFFFFF
+
+@media (max-width: 1199.98px)
+  .footer
+    &__nav
+      grid-template-columns: repeat(2,1fr)
+      gap: 30px
+
+@media (max-width: 991.98px)
+  .footer
+    &__content
+      flex-direction: column
+
+    &__logo
+      max-width: initial
+
+    &__nav
+      width: 100%
+
+@media (max-width: 575.98px)
+  .footer
+    &__nav
+      grid-template-columns: 1fr
+
+    &__copyright
+      flex-direction: column
+
+    &__copyright_links
+      flex-direction: column
+      align-items: initial
+      width: 100%

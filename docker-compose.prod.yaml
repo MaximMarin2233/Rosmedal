@@ -1,0 +1,82 @@
+services:
+
+  nginx:
+    build:
+      context: ./nginx
+      dockerfile: Dockerfile
+    volumes:
+      - static_volume:/opt/services/django/static
+      - media_volume:/opt/services/django/media
+      - certbot_certs:/etc/letsencrypt  # Для SSL-сертификато в
+      - certbot_acme:/var/www/certbot    # Для подтверждения домена
+    env_file:
+      - ./.env
+    ports:
+      - 80:80
+      - 443:443
+    depends_on:
+      - django
+      - certbot
+
+  certbot:
+    image: certbot/certbot
+    volumes:
+      - certbot_certs:/etc/letsencrypt  # Монтируем сертификаты
+      - certbot_acme:/var/www/certbot   # Монтируем для подтверждения
+    entrypoint: "/bin/sh -c 'trap exit TERM; while :; do certbot certonly --webroot -w /var/www/certbot --email Alexglue@yandex.ru --agree-tos --no-eff-email --force-renewal -d rosmedal.com; sleep 12h; done;'"
+
+  next:
+    environment:
+      NODE_ENV: production  # Замените на 'production', если нужно
+    env_file:
+      - ./.env
+    ports:
+      - "3003:3003"  # Проброс порта для продакшн
+    command: sh -c "npm install && npm run start:dev"
+
+
+  db:
+    image: postgres:14.8-alpine
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+    environment:
+      POSTGRES_USER: ${DB_USER}
+      POSTGRES_DB: ${DB_NAME}
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+
+  celery:
+    env_file:
+      - ./.env
+    environment:
+      - DEBUG=0
+
+  celery_beat:
+    env_file:
+      - ./.env
+    environment:
+      - DEBUG=0
+
+  django:
+    build:
+      context: ./backend/
+    volumes: 
+      - ./backend/:/usr/src/backend
+      - static_volume:/usr/src/backend/rosmedal/static
+      - media_volume:/usr/src/backend/rosmedal/media
+    environment:
+      DEBUG: 0
+    env_file:
+      - ./.env
+    command: >
+      sh -c "python /usr/src/backend/rosmedal/manage.py migrate &&
+      python /usr/src/backend/rosmedal/manage.py collectstatic --no-input &&
+      gunicorn core.wsgi:application --bind 0.0.0.0:8000" 
+    depends_on:
+      - db
+
+volumes:
+  static_volume:
+  media_volume:
+  certbot_certs:
+  certbot_acme:
+  postgres_data:

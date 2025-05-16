@@ -1,0 +1,436 @@
+.cab_wallet
+  &__block
+    display: flex
+    flex-direction: column
+    gap: 30px
+
+  &__btns
+    display: flex
+
+  &__btn
+    font-size: 14px
+    color: #2D2323
+    padding: 13px 15px
+    border-radius: 10px
+    flex-grow: 1
+
+    &_active
+      border: 2px solid #7D8592
+
+  &__subtitle
+    font-weight: 700
+    font-size: 24px
+    line-height: 30px
+    color: #2D2323
+    margin: 0
+
+  &__text
+    font-weight: 700
+    font-size: 24px
+    line-height: 30px
+    color: #7D8592
+
+  &__form
+    display: flex
+    flex-direction: column
+    gap: 40px
+
+  &__form_title
+    font-weight: 700
+    font-size: 24px
+    line-height: 30px
+    color: #4F75FE
+    margin: 0
+
+  &__form_btn
+    font-size: 16px
+    color: #FBF9F5
+    background-color: #4F75FE
+    border-radius: 75px
+    padding: 13px 15px
+    width: 100%
+
+  &__balance_wrapper
+    display: flex
+    gap: 18px
+    align-items: flex-start
+
+  &__balance_val
+    padding: 20px 0
+    padding-right: 30px
+    border-top: 1px solid #7D8592
+    border-bottom: 1px solid #7D8592
+    display: flex
+    flex-direction: column
+    gap: 20px
+    flex-grow: 1
+    position: relative
+
+  &__balance_list
+    width: 100%
+    max-width: 520px
+    display: flex
+    flex-direction: column
+    gap: 20px
+
+  &__balance_item
+    font-weight: 600
+    font-size: 14px
+    line-height: 17px
+    color: #7D8592
+    display: flex
+    align-items: center
+    justify-content: space-between
+    gap: 15px
+
+    span
+      font-weight: 600
+      font-size: 14px
+      line-height: 17px
+      color: #2D2323
+
+  &__balance_btn
+    max-width: 224px
+
+  &__balance_links
+    display: flex
+    flex-direction: column
+    gap: 20px
+
+  &__balance_link
+    font-weight: 500
+    font-size: 14px
+    line-height: 17px
+    text-decoration-line: underline
+    color: #7D8592
+    cursor: pointer
+
+  &__balance_inf
+    display: flex
+    flex-direction: column
+    gap: 18px
+    width: 100%
+    max-width: 484px
+
+  &__balance_inf_block
+    padding: 25.1205px 20px
+    background: #EEE9DF
+    border: 0.785016px solid #FB998A
+    border-radius: 7.85016px
+    display: flex
+    flex-direction: column
+    gap: 23px
+
+  &__balance_inf_title,
+  &__balance_inf_descr
+    font-weight: 600
+    font-size: 14px
+    line-height: 120%
+    color: #000000
+    margin: 0
+
+  &__balance_inf_descr
+    color: #424242
+
+  &__balance_inf_list
+    padding: 0
+    margin: 0
+    padding-left: 20px
+
+  &__close
+    width: 20px
+    height: 20px
+    position: absolute
+    right: 0
+    top: 20px
+    background-size: cover
+    background-position: center
+    background-repeat: no-repeat
+    background-image: url("../../assets/cab-wallet/cab-wallet-close.svg")
+
+  &__subscribe
+    padding: 13px 25px
+    background-color: #FB998A
+    border-radius: 10px
+    font-weight: 600
+    font-size: 24px
+    text-align: center
+    color: #2D2323
+    text-transform: uppercase
+    margin-bottom: 50px
+
+    &_active
+      background-color: #5FE0BE
+
+    &_bonus
+      text-align: left
+      margin-bottom: 30px
+      text-transform: initial
+
+      span
+        font-weight: 700
+
+  &__subscribe_title
+    font-weight: 700
+    font-size: 40px
+    line-height: 50px
+    color: #2D2323
+    margin: 0
+    margin-bottom: 40px
+    text-transform: uppercase
+
+    &_text_initial
+      text-transform: initial
+
+  &__subscribe_benefits
+    display: grid
+    gap: 14px
+    grid-template-columns: repeat(4, 1fr)
+    margin-bottom: 50px
+
+  &__subscribe_benefit
+    padding: 30px 20px
+    border-radius: 8.10561px
+    text-align: center
+    font-weight: 700
+    font-size: 24px
+    line-height: 30px
+    color: #2D2323
+
+  &__subscribe_subtitle
+    font-weight: 600
+    font-size: 24px
+    line-height: 150%
+    color: #2D2323
+    margin: 0
+    margin-bottom: 20px
+
+    &_margin
+      margin-bottom: 30px
+
+    &_bonus
+      margin-bottom: 34px
+
+  &__subscribe_blocks
+    display: grid
+    grid-template-columns: repeat(3, 1fr)
+    gap: 30px
+
+  &__subscribe_block
+    padding: 18px 20px 18px 19px
+    background-color: #FFFFFF
+    border: 1px solid #FB998A
+    border-radius: 10px
+    display: flex
+    flex-direction: column
+    align-items: flex-start
+
+  &__subscribe_block_title
+    font-weight: 600
+    font-size: 16px
+    line-height: 150%
+    color: #2D2323
+    margin: 0
+    margin-bottom: 10px
+
+  &__subscribe_block_label
+    font-weight: 600
+    font-size: 16px
+    line-height: 150%
+    color: #2D2323
+    transform: rotate(-5.58deg)
+    padding: 10px 15px
+    background-color: #5FE0BE
+    border-radius: 10px
+    margin-bottom: 20px
+
+  &__subscribe_block_price
+    font-weight: 700
+    font-size: 32px
+    line-height: 40px
+    color: #FB998A
+    margin-bottom: 20px
+
+  &__subscribe_block_btn
+    padding: 11px 15px
+    font-size: 16px
+    background-color: #4F75FE
+    border-radius: 75px
+    width: 100%
+
+  &__bonus_list
+    display: grid
+    grid-template-columns: repeat(2, 1fr)
+    gap: 30px
+    margin-bottom: 30px
+
+  &__bonus_item
+    display: flex
+    flex-direction: column
+    gap: 20px
+    padding: 18px 20px 18px 19px
+    background-color: #FFFFFF
+    border: 1px solid #FB998A
+    border-radius: 10px
+    font-weight: 700
+    font-size: 32px
+    line-height: 40px
+    text-align: center
+    color: #FB998A
+
+    span
+      font-weight: 600
+      font-size: 16px
+      line-height: 150%
+      color: #2D2323
+
+  &__separator
+    width: 100%
+    height: 1px
+    background-color: #7D8592
+    margin-bottom: 30px
+
+    &_margin
+      margin-bottom: 51px
+
+    &_margin_none
+      margin: 0
+
+  &__bonus_descr
+    font-weight: 400
+    font-size: 20px
+    line-height: 150%
+    color: #2D2323
+    margin-bottom: 34px
+
+    span
+      font-weight: 700
+
+  &__bonus_descr_padding
+    padding-left: 5px
+
+  &__bonus_subtitle
+    font-weight: 600
+    font-size: 14px
+    line-height: 17px
+    color: #2D2323
+
+  &__bonus_input_wrapper
+    display: flex
+    flex-direction: column
+    gap: 19px
+    margin-bottom: 43px
+
+  &__bonus_review
+    display: flex
+    flex-direction: column
+    gap: 19px
+    margin-bottom: 30px
+
+  &__bonus_review_file
+    padding: 32px 24px
+    background-color: #FFFFFF
+    border-radius: 16px
+    display: flex
+    flex-direction: column
+    align-items: center
+    gap: 16px
+
+  &__bonus_container
+    width: 100%
+    max-width: 545px
+
+  &__bonus_file_content
+    display: flex
+    flex-direction: column
+    align-items: center
+    gap: 6px
+    text-align: center
+
+  &__bonus_file_text
+    font-weight: 500
+    font-size: 12px
+    color: #2D2323
+    display: flex
+    flex-direction: column
+    gap: 6px
+
+    span
+      font-weight: 500
+      font-size: 12px
+      line-height: 130%
+      color: #7D8592
+
+  &__bonus_btn
+    display: flex
+    align-items: center
+    gap: 8px
+    padding: 12px 42px
+    background-color: #4F75FE
+    border: 1px solid #4F75FE
+    border-radius: 41px
+    font-weight: 500
+    font-size: 14px
+    color: #FFFFFF
+
+  &__bonus_file_btn
+    color: #2D2323
+    width: 100%
+    padding: 13px
+    background-color: #5FE0BE
+    border-radius: 75px
+
+.drag_over 
+  border: 2px dashed #ccc
+  background-color: #f9f9f9
+
+@media (max-width: 1199.98px)
+  .cab_wallet
+    &__balance_wrapper
+      flex-direction: column
+      align-items: initial
+    &__balance_inf
+      max-width: initial
+    &__subscribe_benefits
+      grid-template-columns: repeat(2,1fr)
+    &__subscribe_blocks
+      grid-template-columns: repeat(2,1fr)
+
+@media (max-width: 991.98px)
+  .cab_wallet
+    &__subscribe_title
+      font-size: 30px
+      line-height: 1.2
+    &__subscribe_subtitle
+      font-size: 20px
+      line-height: 1.2
+    &__subscribe_benefits
+      gap: 10px
+    &__subscribe_blocks
+      gap: 10px
+    &__bonus_list
+      gap: 10px
+    &__subscribe_benefit
+      font-size: 20px
+
+    &__documents_accordion_inner
+      padding: 15px
+
+@media (max-width: 575.98px)
+  .cab_wallet
+    &__btns
+      flex-direction: column
+      gap: 10px
+    &__subscribe
+      font-size: 20px
+    &__subscribe_title
+      font-size: 25px
+      margin-bottom: 20px
+    &__subscribe_benefits
+      grid-template-columns: 1fr
+    &__subscribe_blocks
+      grid-template-columns: 1fr
+    &__bonus_list
+      grid-template-columns: 1fr
+    &__bonus_descr
+      font-size: 18px

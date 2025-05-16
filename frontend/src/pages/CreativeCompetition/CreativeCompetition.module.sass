@@ -1,0 +1,350 @@
+.creative_competition
+  &__content
+    display: grid
+    grid-template-columns: repeat(2, 1fr)
+    gap: 10px
+    margin-bottom: 66px
+
+  &__text
+    padding: 100px 98px 36px
+    background-size: cover
+    background-position: center
+    background-repeat: no-repeat
+    background-image: url("../../assets/creative-competition/creative-competition-bg.svg")
+    border-radius: 10px
+
+  &__content_title
+    font-weight: 700
+    font-size: 64px
+    line-height: 72px
+    color: #FBF9F5
+    text-transform: uppercase
+    
+  &__img
+    border-radius: 10px
+    height: 100%
+
+  &__diplomas
+    display: grid
+    grid-template-columns: repeat(2, 1fr)
+    gap: 37px
+    margin-bottom: 150px
+
+  &__diplomas_block
+    padding: 50px 46px
+    border-radius: 10px
+    background-color: #FBF9F5
+    display: flex
+    flex-direction: column
+
+  &__diplomas_title
+    font-weight: 500
+    font-size: 32px
+    color: #2D2323
+    margin: 0
+    margin-bottom: 42px
+    display: flex
+    align-items: flex-end
+    gap: 37px
+
+    span
+      font-weight: 700
+      font-size: 127.5px
+      color: #FB998A
+      line-height: 0.7
+
+  &__diplomas_form
+    display: flex
+    flex-direction: column
+    gap: 42px
+    flex-grow: 1
+
+  &__diplomas_form_inputs
+    display: flex
+    flex-direction: column
+    gap: 15px
+    
+
+  &__diplomas_form_input_label
+    display: flex
+    flex-direction: column
+    gap: 10px
+
+    span
+      color: red
+
+  &__diplomas_form_input
+    padding: 18px
+    background-color: #EEE9DF
+    border: 1px solid #2D2323
+    border-radius: 10px
+
+    &,
+    &::placeholder
+      font-weight: 400
+      font-size: 20px
+      line-height: 24px
+      color: #848484
+
+  &__diplomas_subtitle
+    font-weight: 700
+    font-size: 40px
+    line-height: 50px
+    color: #2D2323
+    margin: 0
+    margin-bottom: 10px
+
+    &_margin
+      margin-bottom: 34px
+
+  &__diplomas_descr
+    font-weight: 400
+    font-size: 20px
+    line-height: 24px
+    color: #2D2323
+    margin: 0
+    margin-bottom: 19px
+
+  &__diplomas_form_btn
+    color: #2D2323
+    font-size: 24px
+    padding: 20px
+    width: 100%
+    border-radius: 47px
+    background-color: #CDC4FB
+    margin-top: auto
+
+    &_blue
+      color: #FBF9F5
+      background-color: #4F75FE
+
+  &__diplomas_form_label_wrapper
+    display: flex
+    align-items: center
+    gap: 15px
+
+  &__diplomas_form_file_name
+    font-weight: 400
+    font-size: 12px
+    line-height: 24px
+    color: #2D2323
+
+  &__diplomas_form_label
+    padding: 8px 16px
+    padding-left: 32px
+    background: #4F75FE
+    box-shadow: 0px 2px 5px rgba(20, 88, 201, 0.17), inset 0px -2px 0.3px rgba(14, 56, 125, 0.18), inset 0px 2px 1px rgba(255, 255, 255, 0.22)
+    border-radius: 8px
+    font-weight: 500
+    font-size: 12px
+    color: #FBF9F5
+    position: relative
+
+    input 
+      display: none
+
+    &::before
+      content: ""
+      width: 9px
+      height: 10px
+      position: absolute
+      top: 50%
+      transform: translateY(-50%)
+      left: 17px
+      background-size: cover
+      background-position: center
+      background-repeat: no-repeat
+      background-image: url("../../assets/creative-competition/creative-competition-diplomas-form-file.svg")
+
+  &__diplomas_block_img 
+    margin-bottom: 34px
+
+  &__diplomas_block_img 
+    margin-bottom: 34px
+
+  &__participate
+    padding: 76px 40px
+    background-color: #4F75FE
+    border-radius: 10px
+    background-size: cover
+    background-position: center
+    background-repeat: no-repeat
+    background-image: url("../../assets/creative-competition/creative-competition-participate-bg.svg")
+    display: flex
+    align-items: center
+    justify-content: space-between
+    gap: 15px
+    margin-bottom: 100px
+
+  &__participate_text
+    display: flex
+    flex-direction: column
+    gap: 48px
+    width: 100%
+    max-width: 700px
+
+  &__participate_title
+    font-weight: 700
+    font-size: 64px
+    line-height: 68px
+    color: #FBF9F5
+    margin: 0
+
+  &__participate_btns
+    display: flex
+    flex-direction: column
+    gap: 20px
+
+  &__participate_btn
+    padding: 23px
+    color: #2D2323
+    padding: 25px
+    width: 100%
+    border-radius: 47px
+    background-color: #FBF9F5
+
+    &_transparent
+      background-color: transparent
+      color: #FBF9F5
+      border: 1px solid #FBF9F5
+      display: flex
+      align-items: center
+      justify-content: center
+
+  &__advantages_btn
+    display: flex
+    align-items: center
+    justify-content: center
+
+  &__text_dark
+    color: #2D2323
+
+    span
+      color: currentcolor
+
+  &__steps_list 
+    grid-template-columns: repeat(3, 1fr)
+
+  &__steps_link
+    font-weight: 400
+    font-size: 32px
+    line-height: 38px
+    color: #2D2323
+    position: relative
+    padding-left: 67px
+    margin-bottom: 60px
+    display: block
+
+    &::before
+      content: ""
+      position: absolute
+      left: 0
+      top: 50%
+      transform: translateY(-50%)
+      width: 50px
+      height: 50px
+      background-size: cover
+      background-position: center
+      background-repeat: no-repeat
+      background-image: url("../../assets/creative-competition/creative-competition-download.svg")
+
+    span
+      text-decoration-line: underline
+
+  &__steps_btns
+    display: flex
+    gap: 28px
+
+  &__steps_btn
+    padding: 23px
+    color: #2D2323
+    width: 100%
+    max-width: 489px
+    background-color: #FB998A
+    border-radius: 75px
+    font-size: 24px
+    display: flex
+    align-items: center 
+    justify-content: center
+
+    &_grow
+      background-color: #FBF9F5
+      border: 2px solid #000000
+      flex-grow: 1
+      max-width: initial
+
+  &__results_item_title
+    font-weight: 700
+    font-size: 64px
+    line-height: 68px
+    text-align: center
+    color: #4F75FE
+
+  &__results_item_val
+    font-weight: 700
+    font-size: 40px
+    line-height: 50px
+    text-align: center
+    color: #2D2323
+
+.advantages
+  &__block_bg
+    &_1
+      background-image: url("../../assets/creative-competition/creative-competition-advantages-img-1.png")
+
+    &_2
+      background-image: url("../../assets/creative-competition/creative-competition-advantages-img-2.png")
+
+@media (max-width: 1199.98px)
+  .creative_competition
+    &__participate
+      flex-direction: column
+
+    &__diplomas
+      gap: 10px
+
+    &__text
+     padding: 40px
+
+    &__content_title
+      font-size: 45px
+      line-height: 1.2
+
+@media (max-width: 991.98px)
+
+  .creative_competition
+    &__steps_list
+      grid-template-columns: 1fr
+
+    &__diplomas
+      grid-template-columns: 1fr
+
+    &__participate_title
+      font-size: 45px
+      line-height: 1.2
+
+@media (max-width: 767.98px)
+
+  .creative_competition
+    &__content
+      grid-template-columns: 1fr
+
+@media (max-width: 575.98px)
+
+  .creative_competition
+    &__diplomas
+      margin-bottom: 50px
+    &__steps_btns
+      flex-direction: column
+
+    &__content_title
+     font-size: 40px
+    &__diplomas_title
+     flex-direction: column
+     align-items: initial
+     font-size: 30px
+
+     span
+      font-size: 80px
+    &__diplomas_block
+     padding: 30px

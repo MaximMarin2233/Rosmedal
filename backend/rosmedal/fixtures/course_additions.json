@@ -1,0 +1,1 @@
+[{"model": "courses.usercourseaddition", "pk": 1, "fields": {"title": "Ускоренное обучение", "price": "500.00"}}, {"model": "courses.usercourseaddition", "pk": 2, "fields": {"title": "Твёрдая обложка", "price": "300.00"}}, {"model": "courses.usercourseaddition", "pk": 3, "fields": {"title": "Экспресс доставка", "price": "500.00"}}]

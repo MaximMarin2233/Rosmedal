@@ -1,0 +1,267 @@
+.courses
+  padding-top: 0
+  &__color_dark
+    color: #fff
+    font-weight: 800
+    background-color: #FF662C
+    border-radius: 10px
+    padding: 5px 8px
+
+  &__color_bold
+    font-weight: 800
+
+  &__hero_wrapper
+    gap: initial
+
+  &__title
+    font-weight: 800
+    font-size: 40px
+    line-height: 48px
+    color: #fff
+    margin-bottom: 30px
+
+  &__descr
+    font-weight: 400
+    font-size: 36px
+    line-height: 48px
+    color: #FFFFFF
+    margin-bottom: 46px
+
+  &__first_price
+    font-weight: 400
+    font-size: 36px
+    line-height: 48px
+    color: #FFFFFF
+
+    span
+      text-decoration: line-through
+
+  &__second_price
+    font-weight: 700
+    font-size: 48px
+    line-height: 48px
+    color: #4F75FE
+    position: relative
+
+  &__discount
+    font-weight: 500
+    font-size: 16.872px
+    line-height: 18px
+    color: #FFFFFF
+    padding: 6px 16px
+    background-color: #FB998A
+    border-radius: 79px
+    position: absolute
+    right: -40px
+    top: -32px
+    transform: rotate(9deg)
+
+  &__content_title
+    background-color: #5FE0BE
+    justify-content: center
+
+  &__btn_text
+    font-size: 20px
+
+  &__price_wrapper
+    display: flex
+    align-items: center
+    gap: 31px
+
+  &__price
+    display: flex
+    align-items: center
+    gap: 19px
+
+  &__color_white
+    color: #fff
+
+  &__date
+    font-weight: 700
+
+  &__diplomas
+    background-color: #FB998A
+    background-size: cover
+    background-position: center
+    background-repeat: no-repeat
+    background-image: url("../../assets/courses/courses-diplomas-bg.svg")
+
+  &__btn
+    margin: 0
+    display: flex
+    align-items: center
+    justify-content: center
+    padding: 20px 50px
+    background-color: #FFFFFF
+    border-radius: 10px
+    font-weight: 600
+    font-size: 24px
+    color: #000000
+    max-width: 267px
+
+  &__steps
+    margin-bottom: 120px
+
+  &__steps_title
+    margin-bottom: 70px
+    width: 100%
+
+    span
+      color: #1691D0
+
+    &_width
+      max-width: 780px
+
+  &__steps_list
+    display: grid
+    grid-template-columns: repeat(2, 1fr)
+    gap: 26px 132px
+    margin-bottom: 92px
+    position: relative
+
+  &__steps_list_img
+    position: absolute
+    left: 50%
+    top: 50%
+    transform: translate(-50%, -50%)
+
+  &__steps_item
+    padding: 25px
+    background-color: #FFFFFF
+    border: 1px solid #000000
+    border-radius: 10px
+    display: flex
+    flex-direction: column
+    gap: 10px
+
+    &_flex_end
+      align-items: flex-end
+
+  &__steps_item_title
+    font-weight: 700
+    font-size: 24px
+    line-height: 29px
+    color: #000000
+    margin: 0
+
+  &__steps_item_descr
+    font-weight: 400
+    font-size: 18px
+    line-height: 22px
+    color: #000000
+    margin: 0
+
+    span
+      font-weight: 600
+
+  &__steps_item_text
+    font-weight: 600
+    font-size: 18px
+    line-height: 22px
+    color: #000000
+    margin-top: auto
+
+  &__steps_btn
+    padding: 20px 50px
+    background-color: #134283
+    border-radius: 10px
+    font-weight: 600
+    font-size: 24px
+    color: #FFFFFF
+    display: block
+    margin: 0 auto
+    display: flex
+    align-items: center
+    justify-content: center
+    width: 100%
+    max-width: 315px
+
+  &__work
+    margin-bottom: 120px
+
+  &__work_list
+    display: grid
+    grid-template-columns: repeat(3, 1fr)
+    gap: 16px
+
+  &__work_item
+    padding: 40px
+    background-color: #FFFFFF
+    border: 1px solid #000000
+    border-radius: 10px
+    display: flex
+    flex-direction: column
+
+  &__work_item_content
+    width: 100%
+    max-width: 805px
+    display: flex
+    flex-direction: column
+
+  &__work_item_title
+    font-weight: 700
+    font-size: 40px
+    line-height: 48px
+    color: #000000
+    margin: 0
+
+    &_margin
+      margin-bottom: 40px
+
+  &__work_item_descr
+    font-weight: 400
+    font-size: 20px
+    line-height: 23px
+    color: #2D2323
+    margin: 0
+
+    &_margin
+      margin-bottom: 40px
+
+  &__work_btn
+    padding: 22px 36px
+    border-radius: 10px
+    font-weight: 600
+    font-size: 24px
+    color: #FFFFFF
+    margin-top: auto
+    display: flex
+    align-items: center
+    justify-content: center
+    width: 100%
+    max-width: 347px
+
+    &_1
+      background-color: #FF662C
+    &_2
+      background-color: #134283
+    &_3
+      background-color: #1691D0
+
+@media (max-width: 1199.98px)
+  .courses
+    &__steps_list
+      grid-template-columns: repeat(2,1fr)
+
+@media (max-width: 991.98px)
+  .courses
+    &__work_list
+      grid-template-columns: 1fr
+
+@media (max-width: 767.98px)
+  .courses
+    &__steps_list
+      grid-template-columns: 1fr
+
+@media (max-width: 575.98px)
+  .courses
+    &__title
+      font-size: 32px
+      line-height: 35px
+
+    &__btn_text
+      font-size: 17px
+      padding: 15px
+      display: flex
+      align-items: center
+      justify-content: center

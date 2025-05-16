@@ -1,0 +1,142 @@
+[
+    {
+      "model": "courses.coursevariationhourcoefficientprice",
+      "pk": 1,
+      "fields": {
+        "variation": 1,
+        "number_of_hours": 36,
+        "price_coefficient": "1.00",
+        "discount_percentage": "40.00"
+      }
+    },
+    {
+      "model": "courses.coursevariationhourcoefficientprice",
+      "pk": 2,
+      "fields": {
+        "variation": 1,
+        "number_of_hours": 72,
+        "price_coefficient": "1.47",
+        "discount_percentage": "40.00"
+      }
+    },
+    {
+      "model": "courses.coursevariationhourcoefficientprice",
+      "pk": 3,
+      "fields": {
+        "variation": 1,
+        "number_of_hours": 108,
+        "price_coefficient": "1.70",
+        "discount_percentage": "40.00"
+      }
+    },
+    {
+      "model": "courses.coursevariationhourcoefficientprice",
+      "pk": 4,
+      "fields": {
+        "variation": 1,
+        "number_of_hours": 144,
+        "price_coefficient": "1.88",
+        "discount_percentage": "40.00"
+      }
+    },
+    {
+      "model": "courses.coursevariationhourcoefficientprice",
+      "pk": 5,
+      "fields": {
+        "variation": 1,
+        "number_of_hours": 180,
+        "price_coefficient": "2.05",
+        "discount_percentage": "40.00"
+      }
+    },
+    {
+      "model": "courses.coursevariationhourcoefficientprice",
+      "pk": 6,
+      "fields": {
+        "variation": 1,
+        "number_of_hours": 216,
+        "price_coefficient": "2.30",
+        "discount_percentage": "40.00"
+      }
+    },
+    {
+      "model": "courses.coursevariationhourcoefficientprice",
+      "pk": 7,
+      "fields": {
+        "variation": 1,
+        "number_of_hours": 248,
+        "price_coefficient": "2.47",
+        "discount_percentage": "40.00"
+      }
+    },
+    {
+      "model": "courses.coursevariationhourcoefficientprice",
+      "pk": 8,
+      "fields": {
+        "variation": 2,
+        "number_of_hours": 300,
+        "price_coefficient": "1.00",
+        "discount_percentage": "40.00"
+      }
+    },
+    {
+      "model": "courses.coursevariationhourcoefficientprice",
+      "pk": 9,
+      "fields": {
+        "variation": 2,
+        "number_of_hours": 600,
+        "price_coefficient": "1.47",
+        "discount_percentage": "40.00"
+      }
+    },
+    {
+      "model": "courses.coursevariationhourcoefficientprice",
+      "pk": 10,
+      "fields": {
+        "variation": 2,
+        "number_of_hours": 1000,
+        "price_coefficient": "1.78",
+        "discount_percentage": "40.00"
+      }
+    },
+    {
+      "model": "courses.coursevariationhourcoefficientprice",
+      "pk": 11,
+      "fields": {
+        "variation": 2,
+        "number_of_hours": 1500,
+        "price_coefficient": "2.09",
+        "discount_percentage": "40.00"
+      }
+    },
+    {
+      "model": "courses.coursevariationhourcoefficientprice",
+      "pk": 12,
+      "fields": {
+        "variation": 3,
+        "number_of_hours": 16,
+        "price_coefficient": "1.00",
+        "discount_percentage": "40.00"
+      }
+    },
+    {
+      "model": "courses.coursevariationhourcoefficientprice",
+      "pk": 13,
+      "fields": {
+        "variation": 3,
+        "number_of_hours": 300,
+        "price_coefficient": "7.50",
+        "discount_percentage": "40.00"
+      }
+    },
+    {
+      "model": "courses.coursevariationhourcoefficientprice",
+      "pk": 14,
+      "fields": {
+        "variation": 2,
+        "number_of_hours": 2000,
+        "price_coefficient": "2.40",
+        "discount_percentage": "40.00"
+      }
+    },
+  ]

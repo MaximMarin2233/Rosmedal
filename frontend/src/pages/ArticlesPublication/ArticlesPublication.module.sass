@@ -1,0 +1,173 @@
+.articles_publication
+  &__form
+    display: flex
+    flex-direction: column
+    gap: 45px
+    margin-bottom: 96px
+
+  &__content
+    display: flex
+    justify-content: space-between
+    gap: 15px
+    align-items: center
+
+  &__form_content
+    display: flex
+    flex-direction: column
+    gap: 45px
+
+  &__text
+    font-weight: 400
+    font-size: 20px
+    line-height: 25px
+    color: #2D2323
+
+    a
+      color: currentcolor
+      text-decoration: underline
+      cursor: pointer
+
+    &_max_width
+      width: 100%
+      max-width: 751px
+
+  &__form_inputs
+    display: flex
+    flex-direction: column
+    gap: 15px
+    width: 100%
+    max-width: 500px
+
+  &__form_input
+    padding: 18px
+    background-color: #FBF9F5
+    border: 1px solid #2D2323
+    border-radius: 10px
+
+    &,
+    &::placeholder
+      font-weight: 400
+      font-size: 20px
+      color: #7D8592
+
+  &__subtitle
+    font-weight: 700
+    font-size: 40px
+    line-height: 50px
+    color: #2D2323
+    margin: 0
+
+  &__btn
+    font-size: 24px
+    color: #2D2323
+    padding: 23px
+    width: 100%
+    max-width: 489px
+    background-color: #FB998A
+    border-radius: 75px
+
+  &__articles
+    display: flex
+    flex-direction: column
+    gap: 77px
+    margin-bottom: 100px
+
+  &__article
+    display: flex
+    flex-direction: column
+    gap: 32px
+
+  &__article_title
+    color: #4F75FE
+
+  &__article_descr
+    font-weight: 400
+    font-size: 20px
+    line-height: 24px
+    color: #2D2323
+    margin: 0
+
+    ul
+      list-style-type: initial
+
+  &__faq_title
+    margin-bottom: 90px
+
+.editor
+  display: flex
+  flex-direction: column
+
+  &__buttons
+    display: flex
+    gap: 8px
+    background-color: #FBF9F5
+    border: 1px solid #000000
+    border-radius: 10px
+    padding: 10px 41px
+
+    button
+      cursor: pointer
+      width: 71px
+      height: 54px
+      background-color: #EEE9DF
+      border: 1px solid #7D8592
+      border-radius: 10px
+      display: flex
+      align-items: center
+      justify-content: center
+
+  &__content
+    background-color: #FBF9F5
+    border-radius: 10px
+    min-height: 400px
+    padding: 42px 41px
+    position: relative
+
+    &::before
+      content: "Начните вводить текст здесь..."
+      position: absolute
+      left: 41px
+      top: 42px
+
+    &_active
+      &::before
+        display: none
+
+.error
+  color: red
+
+@media (max-width: 1199.98px) 
+  .articles_publication
+    &__text_max_width
+      max-width: initial
+
+    &__content
+      flex-direction: column
+  
+
+@media (max-width: 767.98px) 
+  .editor__buttons
+    flex-wrap: wrap
+
+@media (max-width: 575.98px) 
+  .articles_publication
+    &__form
+      gap: 10px
+    &__form_content
+      gap: 20px
+  
+    &__text
+      font-size: 16px
+      line-height: 20px
+
+    &__subtitle
+      font-size: 33px
+      line-height: 35px
+
+    &__article
+      gap: initial
+
+    &__article_descr
+      font-size: 17px
+      line-height: 20px
+

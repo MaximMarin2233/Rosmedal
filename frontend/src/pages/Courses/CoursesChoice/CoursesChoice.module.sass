@@ -1,0 +1,149 @@
+.courses_choice
+  &__list
+    display: grid
+    grid-template-columns: repeat(2,1fr)
+    gap: 20px 18px
+
+  &__item
+    padding: 20px
+    background-color: #FBF9F5
+    border-radius: 10px
+    display: flex
+    flex-direction: column
+    gap: 16px
+
+  &__item_img
+    display: flex
+    flex-direction: column
+    gap: 16px
+    align-items: flex-start
+
+    img
+      border-radius: 12px
+
+  &__item_img_text
+    font-weight: 400
+    font-size: 16px
+    line-height: 24px
+    color: #7D8592
+
+  &__item_content
+    display: flex
+    flex-direction: column
+    flex-grow: 1
+
+  &__item_title
+    font-weight: 600
+    font-size: 24px
+    line-height: 24px
+    color: #2D2323
+    margin: 0
+    margin-bottom: 40px
+
+  &__item_hours
+    margin-bottom: 17px
+    font-weight: 400
+    font-size: 16px
+    line-height: 24px
+    color: #7D8592
+    position: relative
+    padding-left: 39px
+
+    &::before
+      content: ""
+      width: 32px
+      height: 32px
+      background-size: cover
+      background-position: center
+      background-repeat: no-repeat
+      background-image: url("../../../assets/courses/courses-choice-time.svg")
+      position: absolute
+      top: 50%
+      left: 0
+      transform: translateY(-50%)
+
+  &__item_descr
+    font-weight: 400
+    font-size: 16px
+    line-height: 24px
+    color: #7D8592
+    margin: 0
+    margin-bottom: 20px
+
+  &__item_price_wrapper
+    display: flex
+    flex-direction: column
+    gap: 15px
+    margin-top: auto
+
+  &__item_price
+    display: flex
+    align-items: center
+    gap: 20px
+
+  &__item_first_price
+    font-weight: 400
+    font-size: 16px
+    line-height: 24px
+    color: #7D8592
+
+    span
+      text-decoration: line-through
+
+  &__item_second_price
+    font-weight: 700
+    font-size: 36px
+    line-height: 48px
+    color: #134283
+
+  &__item_btns
+    display: flex
+    gap: 8px
+    flex-grow: 1
+
+  &__item_btn
+    padding: 14px
+    font-size: 16px
+    width: 100%
+    max-width: 224px
+    padding: 20px
+    background-color: #134283
+    border-radius: 10px
+    font-weight: 600
+    font-size: 15px
+    color: #FFFFFF
+
+    &_red
+      background-color: #1691D0
+
+  &__filter_hours
+    display: grid
+    grid-template-columns: repeat(2, 1fr)
+
+  &__filter_price
+    display: flex
+    justify-content: space-between
+    gap: 15px
+
+    span
+      font-weight: 400
+      font-size: 14.1468px
+      line-height: 14px
+      color: #848484
+
+@media (max-width: 991.98px)
+  .courses_choice
+    &__item_price_wrapper
+      flex-direction: column
+      align-items: initial
+
+    &__item
+      flex-direction: column
+
+@media (max-width: 575.98px)
+  .courses_choice
+    &__item_btns
+      flex-direction: column
+    &__item_btn
+      width: 100%
+      max-width: initial

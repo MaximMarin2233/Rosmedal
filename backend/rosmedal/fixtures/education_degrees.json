@@ -1,0 +1,1 @@
+[{"model": "courses.educationdegree", "pk": 1, "fields": {"code": "HIGHER", "name": "Высшее"}}, {"model": "courses.educationdegree", "pk": 2, "fields": {"code": "SECONDARY", "name": "Среднее профессиональное"}}]

@@ -1,0 +1,120 @@
+.cab_check
+  &__block
+    display: flex
+    flex-direction: column
+
+  &__subtitle
+    font-weight: 700
+    font-size: 24px
+    line-height: 30px
+    color: #7D8592
+    margin: 0
+    margin-bottom: 30px
+
+  &__inputs
+    display: grid
+    grid-template-columns: repeat(2, 1fr)
+    gap: 30px
+    margin-bottom: 40px
+
+  &__btn
+    font-size: 16px
+    color: #FBF9F5
+    padding: 13px 15px
+    background-color: #4F75FE
+    border-radius: 75px
+    width: 100%
+
+  &__list
+    display: grid
+    grid-template-columns: repeat(4, 1fr)
+    gap: 42px
+    margin-bottom: 41px
+
+  &__item
+    display: flex
+    flex-direction: column
+    gap: 13px
+
+  &__item_content
+    width: 100%
+    display: flex
+    align-items: center
+    justify-content: space-between
+    gap: 15px
+    font-weight: 600
+    font-size: 14px
+    line-height: 17px
+    color: #7D8592
+
+    span
+      font-weight: 600
+      font-size: 14px
+      color: #2D2323
+
+  &__download_pdf
+    width: 100%
+    background-color: #4F75FE
+    border-radius: 75.2133px
+    padding: 15px
+    font-family: 'Gilroy'
+    font-weight: 600
+    font-size: 16px
+    color: #FBF9F5
+    transform: translateY(173px)
+
+    &_media
+      transform: translateY(84px)
+
+.modal_content
+  width: 100%
+  min-height: 711px
+  padding-top: 170px
+
+  &_media
+    padding-top: 84px
+    min-height: 378px
+    width: 100%
+
+  &__qr
+    width: 32px
+    height: 32px
+    left: 15px
+    bottom: 17px
+
+    svg
+      width: 100% !important
+      height: 100% !important
+
+@media (max-width: 1399.98px)
+  .cab_check
+    &__list
+      grid-template-columns: repeat(3,1fr)
+      gap: 40px 20px
+
+@media (max-width: 991.98px)
+  .cab_check
+    &__list
+      grid-template-columns: repeat(2,1fr)
+
+@media (max-width: 575.98px)
+  .cab_check
+    &__list
+      grid-template-columns: 1fr
+
+    &__inputs
+      grid-template-columns: 1fr
+      gap: 15px
+
+    &__download_pdf
+      transform: translateY(93px)
+
+      &_media
+        transform: translateY(63px)
+
+  .modal_content
+    padding-top: 100px
+    min-height: 581px
+
+    &_media
+      min-height: 380px

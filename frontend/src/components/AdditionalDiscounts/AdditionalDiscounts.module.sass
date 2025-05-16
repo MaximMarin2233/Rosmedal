@@ -1,0 +1,139 @@
+.additional_discounts
+  padding: 60px 40px
+  padding-right: 48px
+  border-radius: 10px
+  background-color: #134283
+  margin-bottom: 130px
+
+  &__title
+    font-weight: 700
+    font-size: 40px
+    line-height: 48px
+    color: #FFFFFF
+
+  &__content
+    display: flex
+    justify-content: space-between
+    gap: 30px
+    padding: 40px
+    background-color: rgba(22, 145, 208, 0.3)
+    border: 1px solid #FFFFFF
+    border-radius: 10px
+
+  &__text
+    display: flex
+    flex-direction: column
+    gap: 30px
+    width: 100%
+    max-width: 665px
+
+  &__descr
+    font-weight: 400
+    font-size: 18px
+    line-height: 22px
+    color: #FFFFFF
+    margin: 0
+
+  &__price
+    padding: 34.2667px
+    background-color: #FBF9F5
+    border-radius: 10px
+    display: flex
+    flex-direction: column
+    gap: 21px
+    width: 100%
+
+  &__price_title
+    font-weight: 600
+    font-size: 34.2667px
+    line-height: 41px
+    color: #2D2323
+    margin: 0
+
+  &__price_descr
+    font-weight: 400
+    font-size: 24.2382px
+    line-height: 24px
+    color: #848484
+    margin: 0
+
+  &__price_content
+    display: flex
+    justify-content: space-between
+    align-items: center
+    gap: 15px
+
+  &__price_min,
+  &__price_max
+    font-weight: 400
+    font-size: 24.2382px
+    line-height: 24px
+    color: #848484
+
+  &__discount
+    display: flex
+    justify-content: space-between
+    align-items: center
+    gap: 15px
+    font-weight: 400
+    font-size: 24.2382px
+    line-height: 24px
+    color: #848484
+
+  &__discount_text
+    font-weight: 700
+    font-size: 36px
+    line-height: 48px
+    color: #FB998A
+
+  &__range
+    display: flex
+    flex-direction: column
+    gap: 41px
+
+  &__btn
+    padding: 21px
+    background-color: #FF662C
+    border-radius: 10px
+    font-weight: 600
+    font-size: 24px
+    color: #FFFFFF
+
+  &__img
+    border-radius: 17px
+
+@media (max-width: 1399.98px)
+  .additional_discounts
+    &__content
+      flex-direction: column
+
+@media (max-width: 575.98px)
+  .additional_discounts
+    padding: 25px
+    margin-bottom: 50px
+
+    &__img
+      display: none
+
+    >div
+      padding: 0 !important
+
+    &__btn
+      font-size: 18px
+
+    &__price_title
+      font-size: 25px
+      line-height: 1.1
+
+    &__price_descr
+      font-size: 22px
+
+    &__price_min,
+    &__price_max
+      font-size: 20px
+
+    &__discount
+      font-size: 20px
+
+      span
+        font-size: 30px
