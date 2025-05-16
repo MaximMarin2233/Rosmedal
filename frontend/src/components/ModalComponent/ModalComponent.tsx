@@ -1,5 +1,6 @@
 import React, { ReactNode } from 'react';
 import Modal from 'react-modal';
+
 import globalStyles from '../../App.module.sass';
 import styles from './ModalComponent.module.sass';
 
@@ -8,9 +9,8 @@ interface ModalComponentProps {
   onRequestClose: () => void;
   content: ReactNode;
   customClassName: string;
-  additionalButtonClassName?: string; 
+  additionalButtonClassName?: string;
 }
-
 
 const ModalComponent: React.FC<ModalComponentProps & { additionalButtonClassName?: string }> = ({
   isOpen,
@@ -37,9 +37,8 @@ const ModalComponent: React.FC<ModalComponentProps & { additionalButtonClassName
       contentLabel="Example Modal"
     >
       <button
-        className={`${globalStyles.btn_reset} ${styles.modalClose} ${
-          additionalButtonClassName ? additionalButtonClassName : ''
-        }`}
+        className={`${globalStyles.btn_reset} ${styles.modalClose} ${additionalButtonClassName ? additionalButtonClassName : ''
+          }`}
         onClick={onRequestClose}
       ></button>
       {content}

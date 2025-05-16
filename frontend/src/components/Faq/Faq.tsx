@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useMemo } from 'react';
+
 import globalStyles from "../../App.module.sass";
 import styles from "./Faq.module.sass";
 
@@ -9,19 +10,26 @@ interface FAQProps {
 }
 
 const Faq: React.FC<FAQProps> = ({ accordionItems }) => {
-  const [openIndex, setOpenIndex] = useState<number | null>(null);
-  const [heights, setHeights] = useState<number[]>([]);
+  const [openIndex, setOpenIndex] = useState<number | null>(null); // Индекс открытого элемента или null, если всё свернуто
+  const [heights, setHeights] = useState<number[]>([]); // Храним высоты контента для каждого элемента аккордеона
 
-  const contentRefs = useMemo(() => accordionItems.map(() => React.createRef<HTMLDivElement>()), [accordionItems]);
-
-  const handleAccordionClick = (index: number) => {
-    setOpenIndex(openIndex === index ? null : index);
-  };
+  // Создаём массив ссылок на div-контейнеры с контентом каждого элемента аккордеона
+  const contentRefs = useMemo(
+    () => accordionItems.map(() => React.createRef<HTMLDivElement>()),
+    [accordionItems]
+  );
 
   useEffect(() => {
+    // При монтировании/обновлении запоминаем высоту каждого блока контента
     const newHeights = contentRefs.map(ref => ref.current?.scrollHeight || 0);
     setHeights(newHeights);
   }, [contentRefs, accordionItems]);
+
+
+  // Component functions
+  function handleAccordionClick(index: number) {
+    setOpenIndex(openIndex === index ? null : index);
+  };
 
   return (
     <section className={styles.faq_component}>
@@ -36,9 +44,9 @@ const Faq: React.FC<FAQProps> = ({ accordionItems }) => {
               >
                 <span className={globalStyles.accordion__title}>{item.question}</span>
                 <span className={globalStyles.accordion__icon}>
-                  <span 
+                  <span
                     className={globalStyles.line}
-                    style={{ 
+                    style={{
                       transform: openIndex === index ? 'translate(-50%, -50%) rotate(90deg)' : 'translate(-50%, -50%)',
                     }}
                   ></span>
@@ -47,7 +55,7 @@ const Faq: React.FC<FAQProps> = ({ accordionItems }) => {
                   className={globalStyles.accordion__content}
                   aria-hidden={openIndex !== index}
                   ref={contentRefs[index]}
-                  style={{ 
+                  style={{
                     maxHeight: openIndex === index ? heights[index] : 0,
                     opacity: openIndex === index ? 1 : 0,
                     padding: openIndex === index ? '34px 0 0' : '0'

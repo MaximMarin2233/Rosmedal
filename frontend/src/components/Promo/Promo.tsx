@@ -2,8 +2,10 @@ import { useEffect, useState } from "react";
 import { Link } from 'react-scroll';
 
 import { addDays, differenceInMilliseconds, startOfDay } from "date-fns";
+
 import globalStyles from "../../App.module.sass";
 import styles from "./Promo.module.sass";
+
 import PromoDiplomas from "../../assets/promo/promo-diplomas.png";
 import PromoDiplomas2 from "../../assets/promo/promo-diplomas-2.png";
 
@@ -25,6 +27,7 @@ const Promo: React.FC<PromoProps> = ({ isTemplatesActive, bgColor, isSecondBlock
     return () => clearInterval(timer);
   }, []);
 
+  // Component functions
   function calculateTimeLeft() {
     const now = new Date();
     const startDate = startOfDay(now);

@@ -12,11 +12,16 @@ import AdditionalDiscountsImg from "../../assets/additional-discounts/additional
 const AdditionalDiscounts = () => {
   const [value, setValue] = useState(30);
 
-  const handleSliderChange = (newValue) => {
+  const discount = calculateDiscount(value);
+
+  const navigate = useNavigate();
+
+  // Component functions
+  function handleSliderChange(newValue) {
     setValue(newValue);
   };
 
-  const calculateDiscount = (value) => {
+  function calculateDiscount(value) {
     if (value <= 25) {
       return value + 5;
     } else {
@@ -24,11 +29,7 @@ const AdditionalDiscounts = () => {
     }
   };
 
-  const discount = calculateDiscount(value);
-
-  const navigate = useNavigate();
-
-  const handleLinkClick = (path: string) => {
+  function handleLinkClick(path: string) {
     navigate(path);
   };
 

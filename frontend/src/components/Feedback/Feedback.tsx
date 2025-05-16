@@ -11,7 +11,8 @@ const FeedbackForm = () => {
 
   const apiBaseUrl = process.env.REACT_APP_API_BASE_URL;
 
-  const validateForm = () => {
+  // Component functions
+  function validateForm() {
     let valid = true;
     const newErrors: { name?: string, email?: string, question?: string } = {};
 
@@ -38,7 +39,7 @@ const FeedbackForm = () => {
     return valid;
   };
 
-  const handleSubmit = async (e: FormEvent) => {
+  async function handleSubmit(e: FormEvent) {
     e.preventDefault();
 
     if (!validateForm()) {
@@ -94,8 +95,8 @@ const FeedbackForm = () => {
     <section className={globalStyles.feedback}>
       <div className={`${globalStyles.container} ${globalStyles.feedback__content}`}>
         <div className={globalStyles.feedback__text}>
-          <h2 className={`${globalStyles.title} ${globalStyles.feedback__title}`}>Оставьте заявку на консультацию 
-                      или обучение</h2>
+          <h2 className={`${globalStyles.title} ${globalStyles.feedback__title}`}>Оставьте заявку на консультацию
+            или обучение</h2>
           <p className={globalStyles.feedback__descr}>
             Остались вопросы или возникли какие-то проблемы, а может Вы хотите выдвинуть предложение по развитию проекта? Просто заполните поля ниже и мы Вам ответим в течение суток
           </p>

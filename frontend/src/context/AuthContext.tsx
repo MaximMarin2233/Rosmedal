@@ -1,7 +1,7 @@
-// src/context/AuthContext.tsx
 import { createContext, useState, useEffect, ReactNode } from 'react';
 import AuthService from '../services/AuthService';
 
+// Тип данных для контекста авторизации
 interface AuthContextType {
   isAuthenticated: boolean;
   login: (email: string, password: string) => Promise<void>;
@@ -10,17 +10,19 @@ interface AuthContextType {
   error: string | null;
 }
 
+// Создаём контекст
 export const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
+// Провайдер авторизации
 const AuthProvider = ({ children }: { children: ReactNode }) => {
-  const [isAuthenticated, setIsAuthenticated] = useState<boolean>(false);
-  const [loading, setLoading] = useState<boolean>(true);
-  const [error, setError] = useState<string | null>(null);
+  const [isAuthenticated, setIsAuthenticated] = useState<boolean>(false); // Авторизован ли пользователь
+  const [loading, setLoading] = useState<boolean>(true); // Загрузка состояния
+  const [error, setError] = useState<string | null>(null); // Ошибка при авторизации
 
   useEffect(() => {
     const checkAuth = async () => {
       try {
-        await AuthService.refreshToken();
+        await AuthService.refreshToken(); // Пытаемся обновить токен
         setIsAuthenticated(true);
       } catch (error) {
         setIsAuthenticated(false);
@@ -30,16 +32,17 @@ const AuthProvider = ({ children }: { children: ReactNode }) => {
       }
     };
 
-    checkAuth(); // Первичная проверка при загрузке
+    checkAuth(); // Проверка при загрузке
 
     const intervalId = setInterval(() => {
       checkAuth(); // Проверка каждые 5 минут
     }, 5 * 60 * 1000);
 
-    return () => clearInterval(intervalId);
+    return () => clearInterval(intervalId); // Очистка таймера
   }, []);
 
-
+  // Component functions
+  // Вход
   const login = async (email: string, password: string) => {
     setLoading(true);
     setError(null);
@@ -54,10 +57,11 @@ const AuthProvider = ({ children }: { children: ReactNode }) => {
     }
   };
 
+  // Выход
   const logout = () => {
     AuthService.logout();
     setIsAuthenticated(false);
-    window.location.reload();
+    window.location.reload(); // Перезагрузка страницы
   };
 
   return (

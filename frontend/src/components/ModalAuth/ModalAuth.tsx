@@ -22,7 +22,8 @@ const ModalAuth = () => {
 
   const { login } = authContext;
 
-  const handleSubmit = async (e: FormEvent) => {
+  // Component functions
+  async function handleSubmit(e: FormEvent) {
     e.preventDefault();
 
     const data = { email };
@@ -81,7 +82,7 @@ const ModalAuth = () => {
     }
   };
 
-  const handleSubmitPasswordReset = async (e: FormEvent) => {
+  async function handleSubmitPasswordReset(e: FormEvent) {
     e.preventDefault();
 
     const data = { email };

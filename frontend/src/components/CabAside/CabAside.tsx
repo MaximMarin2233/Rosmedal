@@ -1,6 +1,8 @@
 import { useContext, useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 
+import { AuthContext } from '../../context/AuthContext';
+
 import globalStyles from "../../App.module.sass";
 import styles from "./CabAside.module.sass";
 
@@ -12,15 +14,11 @@ import AsideIcon5 from '../../assets/cab-profile/cab-profile-aside-icon-5.svg';
 import AsideIcon6 from '../../assets/cab-profile/cab-profile-aside-icon-6.svg';
 import AsideIcon7 from '../../assets/cab-profile/cab-profile-aside-icon-7.svg';
 
-import { AuthContext } from '../../context/AuthContext';
-
 const CabAside = () => {
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+
   const navigate = useNavigate();
   const { pathname } = useLocation();
-
-  const handleLinkClick = (path: string) => {
-    navigate(path);
-  };
 
   const authContext = useContext(AuthContext);
 
@@ -30,7 +28,10 @@ const CabAside = () => {
 
   const { logout } = authContext;
 
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  // Component functions
+  function handleLinkClick(path: string) {
+    navigate(path);
+  };
 
   return (
     <>

@@ -1,11 +1,13 @@
 import React, { useEffect, useState, useContext, useRef } from 'react';
 import { useNavigate, useLocation } from "react-router-dom";
+
 import globalStyles from "../../App.module.sass";
 import styles from "./Header.module.sass";
-import Logo from "../../assets/images/logo.svg";
+
 import { AuthContext } from '../../context/AuthContext';
 import AuthService from '../../services/AuthService';
 
+import Logo from "../../assets/images/logo.svg";
 import HeaderSaleGift from '../../assets/header-sale/header-sale-gift.png';
 import HeaderSaleDoc from '../../assets/header-sale/header-sale-doc.png';
 import HeaderAuthBtn from '../../assets/header/header-auth-btn.svg';
@@ -58,43 +60,28 @@ const navItems = [
 ];
 
 const Header: React.FC<HeaderProps> = ({ openFirstModal }) => {
-  const navigate = useNavigate();
-  const { pathname, search, hash } = useLocation();
+  const [isDropdownActive, setIsDropdownActive] = useState(false); // Стейт для выпадающего меню
+  const [isBurgerMenuActive, setIsBurgerMenuActive] = useState(false); // Стейт для бургер-меню
 
-  const authContext = useContext(AuthContext);
+  const [openIndexes, setOpenIndexes] = useState<number[]>([]); // Открытые пункты аккордеона
+  const dropdownRefs = useRef<(HTMLUListElement | null)[]>([]); // Ссылки на выпадающие списки
+
+  const [formData, setFormData] = useState({ email: '' }); // Данные формы (email)
+  const [avatar, setAvatar] = useState(''); // Аватар пользователя
+
+  const navigate = useNavigate(); // Навигация
+  const { pathname, search, hash } = useLocation(); // Текущий URL
+
+  const authContext = useContext(AuthContext); // Контекст авторизации
 
   if (!authContext) {
     throw new Error('AuthContext must be used within an AuthProvider');
   }
 
-  const { isAuthenticated, logout } = authContext;
+  const { isAuthenticated, logout } = authContext; // Авторизация и выход
 
-  const handleLinkClick = (path: string) => {
-    navigate(path);
-  };
-
-  const isSubPathActive = (subItemsOrPath: { path: string }[] | string | undefined) => {
-    if (Array.isArray(subItemsOrPath)) {
-      return subItemsOrPath.some(item => {
-        const url = new URL(item.path, window.location.origin);
-        return pathname === url.pathname && search === url.search && hash === url.hash;
-      });
-    }
-    if (typeof subItemsOrPath === 'string') {
-      const url = new URL(subItemsOrPath, window.location.origin);
-      return pathname === url.pathname && search === url.search && hash === url.hash;
-    }
-    return false;
-  };
-
-  const [avatar, setAvatar] = useState('');
-
-  const apiBaseUrl = process.env.REACT_APP_API_BASE_URL;
-  const token = AuthService.getAccessToken();
-
-  const [formData, setFormData] = useState({
-    email: '',
-  });
+  const apiBaseUrl = process.env.REACT_APP_API_BASE_URL; // Базовый URL API
+  const token = AuthService.getAccessToken(); // Токен авторизации
 
   useEffect(() => {
     const fetchData = async () => {
@@ -109,9 +96,7 @@ const Header: React.FC<HeaderProps> = ({ openFirstModal }) => {
           },
         });
 
-        if (!response.ok) {
-          throw new Error(`HTTP error! status: ${response.status}`);
-        }
+        if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
 
         const data = await response.json();
         console.log(data);
@@ -130,42 +115,47 @@ const Header: React.FC<HeaderProps> = ({ openFirstModal }) => {
             },
             body: JSON.stringify(body)
           })
-            .then(() => {
-              localStorage.removeItem('refId');
-            })
-            .catch((error) => {
-              console.error('Error:', error);
-            });
-
+            .then(() => localStorage.removeItem('refId'))
+            .catch((error) => console.error('Error:', error));
         }
 
-        setFormData({
-          email: data.email || '',
-        });
-
-        setAvatar(data.avatar);
+        setFormData({ email: data.email || '' }); // Установка email
+        setAvatar(data.avatar); // Установка аватара
 
       } catch (error) {
         console.error('Error fetching data:', error);
       }
     };
 
-    if (token) {
-      fetchData();
-    }
+    if (token) fetchData();
   }, []);
 
-  const [isDropdownActive, setIsDropdownActive] = useState(false);
-  const [isBurgerMenuActive, setIsBurgerMenuActive] = useState(false);
+  // Component functions
+  function handleLinkClick(path: string) {
+    navigate(path);
+  }
 
-  const [openIndexes, setOpenIndexes] = useState<number[]>([]);
-  const dropdownRefs = useRef<(HTMLUListElement | null)[]>([]);
+  function isSubPathActive(subItemsOrPath: { path: string }[] | string | undefined) {
+    // Проверка активности подменю
+    if (Array.isArray(subItemsOrPath)) {
+      return subItemsOrPath.some(item => {
+        const url = new URL(item.path, window.location.origin);
+        return pathname === url.pathname && search === url.search && hash === url.hash;
+      });
+    }
+    if (typeof subItemsOrPath === 'string') {
+      const url = new URL(subItemsOrPath, window.location.origin);
+      return pathname === url.pathname && search === url.search && hash === url.hash;
+    }
+    return false;
+  }
 
-  const toggleAccordion = (index: number) => {
+  function toggleAccordion(index: number) {
+    // Открытие/закрытие пункта аккордеона
     setOpenIndexes((prev) =>
       prev.includes(index) ? prev.filter((i) => i !== index) : [...prev, index]
     );
-  };
+  }
 
   return (
     <>

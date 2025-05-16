@@ -1,11 +1,10 @@
 import { useContext } from 'react';
 import { useNavigate } from "react-router-dom";
 
-import { AuthContext } from '../../context/AuthContext';
-
-
 import globalStyles from "../../App.module.sass";
 import styles from "./Footer.module.sass";
+
+import { AuthContext } from '../../context/AuthContext';
 
 import FooterLogo from "../../assets/footer/footer-logo.svg";
 import FooterVK from "../../assets/footer/footer-vk.svg";
@@ -19,10 +18,6 @@ interface FooterProps {
 const Footer: React.FC<FooterProps> = ({ setModalOpen }) => {
   const navigate = useNavigate();
 
-  const handleLinkClick = (path: string) => {
-    navigate(path);
-  };
-
   const authContext = useContext(AuthContext);
 
   if (!authContext) {
@@ -30,6 +25,11 @@ const Footer: React.FC<FooterProps> = ({ setModalOpen }) => {
   }
 
   const { isAuthenticated } = authContext;
+
+  // Component functions
+  function handleLinkClick(path: string) {
+    navigate(path);
+  };
 
   return (
     <footer className={styles.footer}>

@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+
 import QRCode from 'qrcode';
 
 interface QRCodeProps {
@@ -12,7 +13,7 @@ const QRCodeComponent: React.FC<QRCodeProps> = ({ url }) => {
     QRCode.toString(
       url,
       {
-        type: 'svg', // Генерируем SVG вместо canvas
+        type: 'svg', // Генерируем SVG 
         width: 60,   // Размер QR-кода
         margin: 2,   // Поля вокруг кода
       },

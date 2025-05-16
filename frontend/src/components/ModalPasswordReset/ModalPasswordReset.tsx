@@ -1,4 +1,5 @@
 import { useState } from "react";
+
 import styles from "../../App.module.sass";
 
 const ModalPasswordReset = () => {
@@ -8,7 +9,8 @@ const ModalPasswordReset = () => {
 
   const apiBaseUrl = process.env.REACT_APP_API_BASE_URL;
 
-  const handleSubmit = async (event) => {
+  // Component functions
+  async function handleSubmit(event) {
     event.preventDefault();
     if (password !== confirmPassword) {
       setError("Пароли не совпадают");

@@ -6,9 +6,7 @@ import globalStyles from '../../App.module.sass';
 import styles from './About.module.sass';
 
 import Breadcrumbs from '../../components/Breadcrumbs/Breadcrumbs';
-
 import AboutHeroImg from '../../assets/about/about-hero-img.png';
-
 import AboutGoalsIcon1 from '../../assets/about/about-goals-icon-1.svg';
 import AboutGoalsIcon2 from '../../assets/about/about-goals-icon-2.svg';
 import AboutGoalsIcon3 from '../../assets/about/about-goals-icon-3.svg';

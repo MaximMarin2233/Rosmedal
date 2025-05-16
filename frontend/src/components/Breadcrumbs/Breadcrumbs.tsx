@@ -1,5 +1,8 @@
 import { useNavigate } from 'react-router-dom';
 
+import globalStyles from '../../App.module.sass';
+import styles from './Breadcrumbs.module.sass';
+
 interface BreadcrumbLink {
   name: string;
   href: string;
@@ -8,9 +11,6 @@ interface BreadcrumbLink {
 interface BreadcrumbsProps {
   links: BreadcrumbLink[];
 }
-
-import globalStyles from '../../App.module.sass';
-import styles from './Breadcrumbs.module.sass';
 
 const Breadcrumbs: React.FC<BreadcrumbsProps> = ({ links }) => {
   const navigate = useNavigate();

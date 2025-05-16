@@ -11,12 +11,12 @@ export default defineConfig({
   },
   server: {
     watch: {
-      usePolling: true,  // Используем polling для корректной работы в Docker
+      usePolling: true, // Используем polling для корректной работы в Docker
     },
-    host: true,          // Это позволяет делать приложение доступным изнутри контейнера
+    host: true, // Делаем приложение доступным изнутри контейнера
     port: 3003,
   },
   define: {
-    'process.env': process.env,
+    'process.env': process.env, // Передаём переменные окружения в клиентский код
   },
 });
