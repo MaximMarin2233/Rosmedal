@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
+
 import jsPDF from 'jspdf';
 import html2canvas from 'html2canvas';
 
@@ -64,11 +65,9 @@ const CabDocuments = () => {
   const [docsVariations, setDocsVariations] = useState<IDocsVariations[]>([]);
   const [documents, setDocuments] = useState<IDocument | null>(null);
   const [paidDocuments, setPaidDocuments] = useState(false);
-
   const [openIndex, setOpenIndex] = useState<number | null>(null);
   const [height, setHeight] = useState<number>(0);
   const contentRefs = useRef<(HTMLDivElement | null)[]>([]);
-
   const [openIndex2, setOpenIndex2] = useState<number | null>(null);
   const [height2, setHeight2] = useState<number>(0);
   const contentRefs2 = useRef<(HTMLDivElement | null)[]>([]);
@@ -116,7 +115,6 @@ const CabDocuments = () => {
         console.error('Error fetching documents:', error);
       }
     };
-
 
     const fetchDocsVariations = async () => {
       try {
@@ -250,7 +248,7 @@ const CabDocuments = () => {
 
   const handleAccordionClick = (index: number) => {
     if (window.innerWidth <= 575.98) {
-        window.scrollTo({ top: 200, behavior: 'smooth' });
+      window.scrollTo({ top: 200, behavior: 'smooth' });
     }
 
     if (openIndex === index) {
@@ -266,7 +264,7 @@ const CabDocuments = () => {
 
   const handleAccordionClick2 = (index: number) => {
     if (window.innerWidth <= 575.98) {
-        window.scrollTo({ top: 200, behavior: 'smooth' });
+      window.scrollTo({ top: 200, behavior: 'smooth' });
     }
 
     if (openIndex2 === index) {

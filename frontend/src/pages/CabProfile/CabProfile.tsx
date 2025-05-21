@@ -4,7 +4,7 @@ import InputMask from 'react-input-mask';
 
 import DatePicker, { registerLocale } from 'react-datepicker';
 import { Locale } from 'date-fns'; // Импорт типа Locale
-import ru from 'date-fns/locale/ru'; // Убедитесь, что используется правильный импорт
+import ru from 'date-fns/locale/ru';
 import 'react-datepicker/dist/react-datepicker.css'; // Импорт стилей для DatePicker
 
 registerLocale('ru', ru as unknown as Locale);
@@ -744,8 +744,8 @@ const CabProfile = () => {
                             showMonthDropdown
                             dropdownMode="select"
                             locale="ru" // Установка русского языка
-                            customInput={<input style={{ 
-                              fontSize: '11px', 
+                            customInput={<input style={{
+                              fontSize: '11px',
                               fontWeight: '600',
                               color: '#7D8592'
                             }} />} // Настройка font-size для placeholder и value

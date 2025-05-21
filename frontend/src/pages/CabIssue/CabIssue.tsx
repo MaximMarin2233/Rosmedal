@@ -13,9 +13,7 @@ import ModalComponent from '../../components/ModalComponent/ModalComponent';
 import QRCodeComponent from '../../components/QRCodeComponent/QRCodeComponent';
 
 import CabIssueDiplomBigger from '../../assets/cab-issue/cab-issue-diplom-bigger.png';
-
 import CabIssueThanksBigger from '../../assets/cab-issue/cab-issue-thanks-bigger.png';
-
 import CabIssuePublicationBigger from '../../assets/cab-issue/cab-issue-publication-bigger.png';
 
 interface IDocsVariations {
@@ -61,9 +59,7 @@ const CabIssue = () => {
   const qrUrl = `${apiBaseUrl}/cab-issue`;
 
   const [currentContent, setCurrentContent] = useState(1);
-
   const [documentVariationId, setDocumentVariationId] = useState(1);
-
   const [isFirstModalOpen, setIsFirstModalOpen] = useState(false);
 
   useEffect(() => {

@@ -1,19 +1,23 @@
-import { jsPDF } from 'jspdf';
-import html2canvas from 'html2canvas';
 import { useState, useEffect, useRef } from 'react';
 import { useNavigate } from "react-router-dom";
+
 import Select from 'react-select';
 import InputMask from 'react-input-mask';
+
 import axios from 'axios';
+
+import { jsPDF } from 'jspdf';
+import html2canvas from 'html2canvas';
 
 import DatePicker, { registerLocale } from 'react-datepicker';
 import { Locale } from 'date-fns'; // Импорт типа Locale
-import ru from 'date-fns/locale/ru'; // Убедитесь, что используется правильный импорт
+import ru from 'date-fns/locale/ru';
 import 'react-datepicker/dist/react-datepicker.css'; // Импорт стилей для DatePicker
 
 registerLocale('ru', ru as unknown as Locale);
 
 import AuthService from '../../services/AuthService';
+
 import globalStyles from '../../App.module.sass';
 import profileStyles from '../CabProfile/CabProfile.module.sass';
 import walletStyles from '../CabWallet/CabWallet.module.sass';
@@ -33,7 +37,6 @@ import CabCoursesAddition3 from '../../assets/cab-courses/cab-courses-addition-3
 import CabCoursesChecked from '../../assets/cab-courses/cab-courses-checked.svg';
 import CabCoursesErr from '../../assets/cab-courses/cab-courses-err.svg';
 import CabCoursesCertificate from '../../assets/cab-courses/cab-courses-certificate.png';
-
 import CabCoursesDocVariation1 from '../../assets/cab-courses/cab-courses-variation-1.png';
 import CabCoursesDocVariation2 from '../../assets/cab-courses/cab-courses-variation-2.png';
 import CabCoursesDocVariation2App from '../../assets/cab-courses/cab-courses-variation-2-app.png';
@@ -107,8 +110,6 @@ const CabCourses = () => {
   const certificateLeader = 'Лигаев С. О.'; // Руководитель
   const certificateSecretary = 'Лигаев С. О.'; // Секретарь
 
-
-
   const apiBaseUrl = process.env.REACT_APP_API_BASE_URL;
   const token = AuthService.getAccessToken();
 
@@ -117,18 +118,25 @@ const CabCourses = () => {
   const [coursesVariations, setCoursesVariations] = useState<ICoursesVariations[]>([]);
   const [coursesAdditions, setCoursesAdditions] = useState<ICoursesAdditions[]>([]);
   const [selectedAdditions, setSelectedAdditions] = useState<number[]>([]);
-
-  const handleCheckboxChange = (id: number) => {
-    setSelectedAdditions((prevSelected) => {
-      if (prevSelected.includes(id)) {
-        return prevSelected.filter((itemId) => itemId !== id); // Удалить, если анчек
-      } else {
-        return [...prevSelected, id]; // Добавить, если чек
-      }
-    });
-  };
-
-  const isAdditionSelected = (id: number) => selectedAdditions.includes(id);
+  const [currentContent, setCurrentContent] = useState(0);
+  const [currentId, setCurrentId] = useState(0);
+  const [currentCreatedDate, setCurrentCreatedDate] = useState('');
+  const [currentVariationId, setCurrentVariationId] = useState(0);
+  const [currentCoursePrice, setCurrentCoursePrice] = useState(0);
+  const [currentCourseDiscount, setCurrentCourseDiscount] = useState(0);
+  const [currentCourseCoupon, setCurrentCourseCoupon] = useState(0);
+  const [currentVariation, setCurrentVariation] = useState('');
+  const [currentTitle, setCurrentTitle] = useState('Выберите курс!');
+  const [currentTitleVariation, setCurrentTitleVariation] = useState('');
+  const [currentTitleVariationHours, setCurrentTitleVariationHours] = useState('');
+  const [currentDefaultMaterialsLink, setCurrentDefaultMaterialsLink] = useState('');
+  const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
+  const [gender, setGender] = useState<{ value: string, label: string } | null>(null);
+  const [citizenship, setСitizenship] = useState<{ value: string, label: string } | null>(null);
+  const [education, setEducation] = useState<{ value: string, label: string } | null>(null);
+  const [updateFlag, setUpdateFlag] = useState(false);
+  const [coursesType, setCoursesType] = useState<{ value: string, label: string } | null>(coursesOptions[0] || null);
+  const [tabsType, setTabsType] = useState<{ value: string, label: string } | null>(tabsOptions[0] || null);
 
   const [formData, setFormData] = useState({
     number_of_coupons: '',
@@ -173,78 +181,6 @@ const CabCourses = () => {
     graduation_date: '',
   });
 
-  useEffect(() => {
-    const fetchCourses = async () => {
-      try {
-        const response = await fetch(`${apiBaseUrl}/api/v1/cab/courses`, {
-          method: 'GET',
-          headers: {
-            'Authorization': `Bearer ${token}`,
-            'Content-Type': 'application/json',
-          },
-        });
-
-        const data = await response.json();
-        setCourses(data.results);
-      } catch (error) {
-        console.error('Error fetching courses:', error);
-      }
-    };
-
-    const fetchCoursesVariations = async () => {
-      try {
-        const response = await fetch(`${apiBaseUrl}/api/v1/courses/variations`);
-        const data = await response.json();
-        setCoursesVariations(data.results);
-      } catch (error) {
-        console.error('Error fetching courses variations:', error);
-      }
-    };
-
-    const fetchAdditions = async () => {
-      try {
-        const response = await fetch(`${apiBaseUrl}/api/v1/cab/courses/additions`, {
-          method: 'GET',
-          headers: {
-            'Authorization': `Bearer ${token}`,
-            'Content-Type': 'application/json',
-          },
-        });
-
-        const data = await response.json();
-        setCoursesAdditions(data.results);
-      } catch (error) {
-        console.error('Error fetching courses variations:', error);
-      }
-    };
-
-    fetchCourses();
-    fetchCoursesVariations();
-    fetchAdditions();
-  }, [apiBaseUrl]);
-
-  const [currentContent, setCurrentContent] = useState(0);
-  const [currentId, setCurrentId] = useState(0);
-  const [currentCreatedDate, setCurrentCreatedDate] = useState('');
-  const [currentVariationId, setCurrentVariationId] = useState(0);
-  const [currentCoursePrice, setCurrentCoursePrice] = useState(0);
-  const [currentCourseDiscount, setCurrentCourseDiscount] = useState(0);
-  const [currentCourseCoupon, setCurrentCourseCoupon] = useState(0);
-  const [currentVariation, setCurrentVariation] = useState('');
-  const [currentTitle, setCurrentTitle] = useState('Выберите курс!');
-  const [currentTitleVariation, setCurrentTitleVariation] = useState('');
-  const [currentTitleVariationHours, setCurrentTitleVariationHours] = useState('');
-
-  const [currentDefaultMaterialsLink, setCurrentDefaultMaterialsLink] = useState('');
-
-  const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
-
-  const [gender, setGender] = useState<{ value: string, label: string } | null>(null);
-  const [citizenship, setСitizenship] = useState<{ value: string, label: string } | null>(null);
-  const [education, setEducation] = useState<{ value: string, label: string } | null>(null);
-
-  const [updateFlag, setUpdateFlag] = useState(false);
-
   const coursesOptions = [
     {
       value: '1',
@@ -278,9 +214,6 @@ const CabCourses = () => {
       label: '5. Приступить к обучению',
     },
   ];
-
-  const [coursesType, setCoursesType] = useState<{ value: string, label: string } | null>(coursesOptions[0] || null);
-  const [tabsType, setTabsType] = useState<{ value: string, label: string } | null>(tabsOptions[0] || null);
 
   const genderOptions = [
     {
@@ -350,6 +283,68 @@ const CabCourses = () => {
       label: 'Среднее профессиональное',
     },
   ];
+
+  const handleCheckboxChange = (id: number) => {
+    setSelectedAdditions((prevSelected) => {
+      if (prevSelected.includes(id)) {
+        return prevSelected.filter((itemId) => itemId !== id); // Удалить, если анчек
+      } else {
+        return [...prevSelected, id]; // Добавить, если чек
+      }
+    });
+  };
+
+  const isAdditionSelected = (id: number) => selectedAdditions.includes(id);
+
+  useEffect(() => {
+    const fetchCourses = async () => {
+      try {
+        const response = await fetch(`${apiBaseUrl}/api/v1/cab/courses`, {
+          method: 'GET',
+          headers: {
+            'Authorization': `Bearer ${token}`,
+            'Content-Type': 'application/json',
+          },
+        });
+
+        const data = await response.json();
+        setCourses(data.results);
+      } catch (error) {
+        console.error('Error fetching courses:', error);
+      }
+    };
+
+    const fetchCoursesVariations = async () => {
+      try {
+        const response = await fetch(`${apiBaseUrl}/api/v1/courses/variations`);
+        const data = await response.json();
+        setCoursesVariations(data.results);
+      } catch (error) {
+        console.error('Error fetching courses variations:', error);
+      }
+    };
+
+    const fetchAdditions = async () => {
+      try {
+        const response = await fetch(`${apiBaseUrl}/api/v1/cab/courses/additions`, {
+          method: 'GET',
+          headers: {
+            'Authorization': `Bearer ${token}`,
+            'Content-Type': 'application/json',
+          },
+        });
+
+        const data = await response.json();
+        setCoursesAdditions(data.results);
+      } catch (error) {
+        console.error('Error fetching courses variations:', error);
+      }
+    };
+
+    fetchCourses();
+    fetchCoursesVariations();
+    fetchAdditions();
+  }, [apiBaseUrl]);
 
   const handleCoursesTypeChange = (option: { value: string, label: string } | null) => {
     setCoursesType(option);
@@ -591,6 +586,7 @@ const CabCourses = () => {
     }),
   };
 
+  // Files
   const MAX_FILE_SIZE_MB = 5;
   const [file, setFile] = useState<File | null>(null);
   const [fileName, setFileName] = useState<string | null>(null);
@@ -614,7 +610,6 @@ const CabCourses = () => {
       diploma_scan: droppedFile,
     }));
   };
-
 
   const handleDragOver = (e: React.DragEvent<HTMLDivElement>) => {
     e.preventDefault();
@@ -641,7 +636,6 @@ const CabCourses = () => {
       diploma_scan: chosenFile,
     }));
   };
-
 
   const handleCourseDelete = () => {
     const confirmDelete = window.confirm('Вы действительно хотите удалить курс?');
@@ -678,6 +672,7 @@ const CabCourses = () => {
   const [plannedDocsDate, setPlannedDocsDate] = useState('');
   const [plannedDocsDepositDate, setPlannedDocsDepositDate] = useState('');
 
+  // Tests
   const [testId, setTestId] = useState(0);
   const [modalKey, setModalKey] = useState<number | null>(null);
   const [modalContent, setModalContent] = useState<IOlympiadDetail | null>(null);
@@ -937,7 +932,6 @@ const CabCourses = () => {
     }
   };
 
-
   const validateCyrillicName = (value) => {
     const cyrillicRegex = /^[А-ЯЁ][а-яё]+$/; // Начинается с заглавной кириллической буквы
     return cyrillicRegex.test(value);
@@ -1052,8 +1046,6 @@ const CabCourses = () => {
     }
   };
 
-
-  // В useEffect:
   useEffect(() => {
     if (updateFlag) {
       return;

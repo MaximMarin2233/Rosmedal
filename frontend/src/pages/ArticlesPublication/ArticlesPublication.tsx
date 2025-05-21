@@ -1,18 +1,18 @@
 import { useRef, useEffect, useState } from 'react';
 import { useNavigate } from "react-router-dom";
+
 import SimpleBar from 'simplebar-react';
 import 'simplebar-react/dist/simplebar.min.css';
+
 import globalStyles from '../../App.module.sass';
 import styles from './ArticlesPublication.module.sass';
 
-import ModalComponent from '../../components/ModalComponent/ModalComponent'; // Путь к вашему компоненту
-
+import ModalComponent from '../../components/ModalComponent/ModalComponent';
 import Feedback from '../../components/Feedback/Feedback';
 import Breadcrumbs from '../../components/Breadcrumbs/Breadcrumbs';
 import Faq from '../../components/Faq/Faq';
 
 import ArticlesPublicationImg from '../../assets/articles-publication/articles-publication-img.png';
-
 import ArticlesPublicationBack from '../../assets/articles-publication/articles-publication-back.svg';
 import ArticlesPublicationNext from '../../assets/articles-publication/articles-publication-next.svg';
 import ArticlesPublicationBold from '../../assets/articles-publication/articles-publication-bold.svg';
@@ -24,18 +24,25 @@ import ArticlesPublicationTextRight from '../../assets/articles-publication/arti
 import { faqInterface } from '../../types/faqInterface';
 
 const ArticlesPublication = () => {
+  const navigate = useNavigate();
+
   const contentRef = useRef<HTMLDivElement>(null);
   const shortDescriptionRef = useRef<HTMLDivElement>(null);
   const authorFullNameRef = useRef<HTMLInputElement>(null);
   const authorEmailRef = useRef<HTMLInputElement>(null);
   const topicRef = useRef<HTMLInputElement>(null);
 
+  const breadcrumbLinks = [
+    { name: 'Главная', href: '/' },
+    { name: 'Публикации', href: '/publications' },
+    { name: 'Публикация статей', href: '/articles-publication' },
+  ];
+
   const [contentRefActive, setContentRefActive] = useState(false);
   const [topicRefActive, setTopicRefActive] = useState(false);
-
   const [isFirstModalOpen, setIsFirstModalOpen] = useState(false);
-
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [questions, setQuestions] = useState<faqInterface[]>([]);
 
   const [errors, setErrors] = useState({
     authorFullName: '',
@@ -47,13 +54,69 @@ const ArticlesPublication = () => {
 
   const apiBaseUrl = process.env.REACT_APP_API_BASE_URL;
 
-  const breadcrumbLinks = [
-    { name: 'Главная', href: '/' },
-    { name: 'Публикации', href: '/publications' },
-    { name: 'Публикация статей', href: '/articles-publication' },
-  ];
+  useEffect(() => {
+    const fetchQuestions = async () => {
+      try {
+        const response = await fetch(`${apiBaseUrl}/api/v1/faq/?category=ARTICLES_PUBLICATION`);
+        const data = await response.json();
+        setQuestions(data.results);
+      } catch (error) {
+        console.error('Error fetching questions:', error);
+      }
+    };
 
-  const execCommand = (command: string, value?: string) => {
+    fetchQuestions();
+  }, []);
+
+  useEffect(() => {
+    const handleContentInput = () => {
+      if (contentRef.current) {
+        if (contentRef.current.innerHTML.length > 0) {
+          setErrors(prevErrors => ({
+            ...prevErrors,
+            content: '',
+          }));
+        }
+        setContentRefActive(!!contentRef.current.innerHTML.trim());
+      }
+    };
+
+    const handleShortDescriptionInput = () => {
+      if (shortDescriptionRef.current) {
+        if (shortDescriptionRef.current.innerHTML.length > 1200) {
+          setErrors(prevErrors => ({
+            ...prevErrors,
+            shortDescription: 'Краткое описание статьи не должно превышать 1200 символов',
+          }));
+        } else {
+          setErrors(prevErrors => ({
+            ...prevErrors,
+            shortDescription: '',
+          }));
+        }
+        setTopicRefActive(!!shortDescriptionRef.current.innerHTML.trim());
+      }
+    };
+
+    if (contentRef.current) {
+      contentRef.current.addEventListener('input', handleContentInput);
+    }
+    if (shortDescriptionRef.current) {
+      shortDescriptionRef.current.addEventListener('input', handleShortDescriptionInput);
+    }
+
+    return () => {
+      if (contentRef.current) {
+        contentRef.current.removeEventListener('input', handleContentInput);
+      }
+      if (shortDescriptionRef.current) {
+        shortDescriptionRef.current.removeEventListener('input', handleShortDescriptionInput);
+      }
+    };
+  }, []);
+
+  // Component functions
+  function execCommand(command: string, value?: string) {
     if (value !== null && value !== undefined) {
       document.execCommand(command, false, value);
     } else {
@@ -61,7 +124,7 @@ const ArticlesPublication = () => {
     }
   };
 
-  const validateForm = () => {
+  function validateForm() {
     const newErrors = {
       authorFullName: '',
       authorEmail: '',
@@ -103,9 +166,7 @@ const ArticlesPublication = () => {
     return Object.values(newErrors).every(error => !error);
   };
 
-
-
-  const handleSubmit = async () => {
+  async function handleSubmit() {
     if (validateForm()) {
       if (
         authorEmailRef.current &&
@@ -174,73 +235,6 @@ const ArticlesPublication = () => {
     }
   };
 
-
-  const [questions, setQuestions] = useState<faqInterface[]>([]);
-
-
-  useEffect(() => {
-    const fetchQuestions = async () => {
-      try {
-        const response = await fetch(`${apiBaseUrl}/api/v1/faq/?category=ARTICLES_PUBLICATION`);
-        const data = await response.json();
-        setQuestions(data.results);
-      } catch (error) {
-        console.error('Error fetching questions:', error);
-      }
-    };
-
-    fetchQuestions();
-  }, []);
-
-  useEffect(() => {
-    const handleContentInput = () => {
-      if (contentRef.current) {
-        if (contentRef.current.innerHTML.length > 0) {
-          setErrors(prevErrors => ({
-            ...prevErrors,
-            content: '',
-          }));
-        }
-        setContentRefActive(!!contentRef.current.innerHTML.trim());
-      }
-    };
-
-    const handleShortDescriptionInput = () => {
-      if (shortDescriptionRef.current) {
-        if (shortDescriptionRef.current.innerHTML.length > 1200) {
-          setErrors(prevErrors => ({
-            ...prevErrors,
-            shortDescription: 'Краткое описание статьи не должно превышать 1200 символов',
-          }));
-        } else {
-          setErrors(prevErrors => ({
-            ...prevErrors,
-            shortDescription: '',
-          }));
-        }
-        setTopicRefActive(!!shortDescriptionRef.current.innerHTML.trim());
-      }
-    };
-
-    if (contentRef.current) {
-      contentRef.current.addEventListener('input', handleContentInput);
-    }
-    if (shortDescriptionRef.current) {
-      shortDescriptionRef.current.addEventListener('input', handleShortDescriptionInput);
-    }
-
-    return () => {
-      if (contentRef.current) {
-        contentRef.current.removeEventListener('input', handleContentInput);
-      }
-      if (shortDescriptionRef.current) {
-        shortDescriptionRef.current.removeEventListener('input', handleShortDescriptionInput);
-      }
-    };
-  }, []);
-
-
-
   const openModal = () => {
     setIsFirstModalOpen(true);
   };
@@ -248,8 +242,6 @@ const ArticlesPublication = () => {
   const closeModal = () => {
     setIsFirstModalOpen(false);
   };
-
-  const navigate = useNavigate();
 
   const handleLinkClick = (path: string) => {
     navigate(path);

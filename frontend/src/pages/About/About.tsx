@@ -27,7 +27,22 @@ const About = () => {
 
   const apiBaseUrl = process.env.REACT_APP_API_BASE_URL;
 
-  const validateForm = () => {
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.hash) {
+      const anchor = location.hash.slice(1); // Получаем якорь без символа #
+      scroller.scrollTo(anchor, {
+        duration: 800,
+        delay: 0,
+        smooth: 'easeInOutQuart',
+        offset: -150
+      });
+    }
+  }, [location]);
+
+  // Component functions
+  function validateForm() {
     let valid = true;
     const newErrors: { name?: string, email?: string, question?: string } = {};
 
@@ -54,21 +69,7 @@ const About = () => {
     return valid;
   };
 
-  const location = useLocation();
-
-  useEffect(() => {
-    if (location.hash) {
-      const anchor = location.hash.slice(1); // Получаем якорь без символа #
-      scroller.scrollTo(anchor, {
-        duration: 800,
-        delay: 0,
-        smooth: 'easeInOutQuart',
-        offset: -150
-      });
-    }
-  }, [location]);
-
-  const handleSubmit = async (e: FormEvent) => {
+  async function handleSubmit(e: FormEvent) {
     e.preventDefault();
 
     if (!validateForm()) {
@@ -121,7 +122,6 @@ const About = () => {
       console.error('Ошибка сети:', error);
     }
   };
-
 
   return (
     <section className={`${globalStyles.section_padding} ${styles.about}`}>

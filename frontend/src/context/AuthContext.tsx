@@ -1,7 +1,6 @@
 import { createContext, useState, useEffect, ReactNode } from 'react';
 import AuthService from '../services/AuthService';
 
-// Тип данных для контекста авторизации
 interface AuthContextType {
   isAuthenticated: boolean;
   login: (email: string, password: string) => Promise<void>;
@@ -10,7 +9,6 @@ interface AuthContextType {
   error: string | null;
 }
 
-// Создаём контекст
 export const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
 // Провайдер авторизации

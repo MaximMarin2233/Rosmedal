@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
+
 import jsPDF from 'jspdf';
 import html2canvas from 'html2canvas';
 
@@ -55,17 +56,49 @@ const CabCheck = () => {
   const [docsVariations, setDocsVariations] = useState<IDocsVariations[]>([]);
   const [diplomaNumber, setDiplomaNumber] = useState('');
   const [participantName, setParticipantName] = useState('');
-
-  const apiBaseUrl = process.env.REACT_APP_API_BASE_URL;
-  const token = AuthService.getAccessToken();
-
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedDoc, setSelectedDoc] = useState<IDocsCheckInf | null>(null);
 
-  const handlePreviewClick = (doc: IDocsCheckInf) => {
-    setSelectedDoc(doc);
-    setIsModalOpen(true); // Открываем модальное окно
-  };
+  const contentRef = useRef<HTMLDivElement | null>(null);
+
+  const lvlOptions = [
+    {
+      value: 'INTNAT',
+      label: 'Международный',
+      genitive: 'Международного',
+    },
+    {
+      value: 'ALRUSS',
+      label: 'Всероссийский',
+      genitive: 'Всероссийского',
+    },
+    {
+      value: 'INTREG',
+      label: 'Региональный',
+      genitive: 'Регионального',
+    },
+  ];
+
+  const lvlOptionsOlympiad = [
+    {
+      value: 'INTNAT',
+      label: 'Международная',
+      genitive: 'Международной',
+    },
+    {
+      value: 'ALRUSS',
+      label: 'Всероссийская',
+      genitive: 'Всероссийской',
+    },
+    {
+      value: 'INTREG',
+      label: 'Региональная',
+      genitive: 'Региональной',
+    },
+  ];
+
+  const apiBaseUrl = process.env.REACT_APP_API_BASE_URL;
+  const token = AuthService.getAccessToken();
 
   useEffect(() => {
     const fetchDocsVariations = async () => {
@@ -84,8 +117,19 @@ const CabCheck = () => {
     fetchDocsVariations();
   }, []);
 
+  useEffect(() => {
+    if (contentRef.current) {
+      // Действие при изменении содержимого
+      console.log('Content updated in ref');
+    }
+  }, [selectedDoc]);
 
-  const handleDiplomasSearch = async (event: React.FormEvent) => {
+  // Component functions
+  function handlePreviewClick(doc: IDocsCheckInf) {
+    setSelectedDoc(doc);
+    setIsModalOpen(true); // Открываем модальное окно
+  };
+  async function handleDiplomasSearch(event: React.FormEvent) {
     event.preventDefault(); // Останавливаем стандартное поведение формы
 
     if (!diplomaNumber && !participantName) {
@@ -160,9 +204,7 @@ const CabCheck = () => {
     }
   };
 
-
-
-  const formatDate = (dateString) => {
+  function formatDate(dateString) {
     const months = [
       "января", "февраля", "марта", "апреля", "мая", "июня",
       "июля", "августа", "сентября", "октября", "ноября", "декабря"
@@ -176,44 +218,7 @@ const CabCheck = () => {
     return `${day.toString().padStart(2, '0')} ${month} ${year} г.`;
   };
 
-
-  const lvlOptions = [
-    {
-      value: 'INTNAT',
-      label: 'Международный',
-      genitive: 'Международного',
-    },
-    {
-      value: 'ALRUSS',
-      label: 'Всероссийский',
-      genitive: 'Всероссийского',
-    },
-    {
-      value: 'INTREG',
-      label: 'Региональный',
-      genitive: 'Регионального',
-    },
-  ];
-
-  const lvlOptionsOlympiad = [
-    {
-      value: 'INTNAT',
-      label: 'Международная',
-      genitive: 'Международной',
-    },
-    {
-      value: 'ALRUSS',
-      label: 'Всероссийская',
-      genitive: 'Всероссийской',
-    },
-    {
-      value: 'INTREG',
-      label: 'Региональная',
-      genitive: 'Региональной',
-    },
-  ];
-
-  const getGenitiveLabel = (options, level) => {
+  function getGenitiveLabel(options, level) {
     const option = options.find(opt => opt.value === level);
     return option ? option.genitive : '';
   };
@@ -223,16 +228,7 @@ const CabCheck = () => {
     return `${day}.${month}.${year}`;
   };
 
-  const contentRef = useRef<HTMLDivElement | null>(null);
-
-  useEffect(() => {
-    if (contentRef.current) {
-      // Действие при изменении содержимого
-      console.log('Content updated in ref');
-    }
-  }, [selectedDoc]);
-
-  const handleDownloadPDF = async (docId: number, docVariation: string) => {
+  async function handleDownloadPDF(docId: number, docVariation: string) {
     if (!contentRef.current) {
       alert('Содержимое не найдено.');
       return;
@@ -307,7 +303,6 @@ const CabCheck = () => {
 
 
   };
-
 
   return (
     <section className={`${globalStyles.section_padding}`}>
